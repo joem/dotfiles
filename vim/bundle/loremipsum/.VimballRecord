@@ -1,0 +1,2 @@
+loremipsum.vba: call delete('loremipsum//autoload/loremipsum.vim')|call delete('loremipsum//autoload/loremipsum.txt')|call delete('loremipsum//plugin/loremipsum.vim')|call delete('loremipsum//doc/loremipsum.txt')
+loremipsum.vba: call delete('/Users/joemiragliuolo/.vim/bundle/loremipsum/autoload/loremipsum.vim')|call delete('/Users/joemiragliuolo/.vim/bundle/loremipsum/autoload/loremipsum.txt')|call delete('/Users/joemiragliuolo/.vim/bundle/loremipsum/plugin/loremipsum.vim')|call delete('/Users/joemiragliuolo/.vim/bundle/loremipsum/doc/loremipsum.txt')
