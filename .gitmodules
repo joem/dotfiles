@@ -31,3 +31,6 @@
 [submodule "vim/bundle/indent-guides"]
 	path = vim/bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/indent-object"]
+	path = vim/bundle/indent-object
+	url = https://github.com/michaeljsmith/vim-indent-object.git
