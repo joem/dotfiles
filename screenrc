@@ -1,0 +1,63 @@
+# Much of this comes from ElTopo's screenrc:
+# http://www.scribd.com/doc/693612/my-screenrc-for-screen
+#
+#term xterm
+defutf8 on
+defflow off
+vbell off
+autodetach on
+startup_message off
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce "on"
+# make the shell in every window a login shell
+shell -$SHELL
+################
+#
+# default windows, change to suit your needs
+#
+# for some reason, only the first one is a good one
+# and the rest are blah
+# but if I do a <C-a c> I get a good one!
+# HOW TO FIX????? (for now, just no default screens)
+#
+#screen -t work 0
+#screen -t shell 1
+#screen -t others 2
+#select 0
+
+# NOTE: hardstatus  - good for dealing with many layered windows
+# NOTE: caption     - good for many split screens
+
+########
+#
+# Hard status line hack
+hardstatus alwaysignore
+hardstatus alwayslastline
+
+# decent! b/w.... tabs on left, date time on right.
+hardstatus string "%{= wk} %?%-Lw%?%{= kd} %n*%f %t %{= wk}%?%+Lw%? %{= wk}%=%{= Wk} %C%a %m-%d-%Y %{= wk}"
+
+# simple, yellow... tabs on left... no date, just time on right:
+#     hardstatus string '%{Yk}%-w%{.Yk}%n %t%{-}%+w %=%{.w} %{kY}%C'
+# blueish... no list of tabs... in corner:  [20090109 20:21]:
+#     hardstatus string "%{kb}[%{+b}%h%{-b}]%= %{kg}[%{+b}%Y%m%d %c%{-b}]"
+# alrightish :
+#     hardstatus string "%{=}%{kG} Screen(s): %{w}%w %=%{kG}%C%A  %D, %M/%d/%Y"
+# bright green, centered tabs... but clean.:
+#     caption always "%{+b kG} %=%{-s} %{.K}%-w%{.B}%n %{.G}%t%{.K}%+w%{.G} %{+s} %="
+# decent! b/w.... tabs on left, date time on right.:
+#     caption always "%{= wk} %?%-Lw%?%{= kd} %n*%f %t %{= wk}%?%+Lw%? %{= wk}%=%{= Wk} %C%a %m-%d-%Y %{= wk}"
+# tabs like (bash*) in red... :
+#     caption always "%{rk}%?%-Lw%?%{-b}(%{+b}%n %t%{-b})%{-b}%?(%u)%?%{rk}%?%+Lw%?%="
+# alrightish- tabs highlighted:
+#     caption always "%m/%d/%y %0c%{=b kg}  %l  %{=r gk}%-w%{=b wb}%50>%n%f* %t%{-}%+Lw%<%{- Wk}"
+
+# this lets you use mouse scrolling in the buffer (SORT OF)
+# (just so long as you don't have a splitscreen going)
+#termcapinfo xterm* ti@:te@
+

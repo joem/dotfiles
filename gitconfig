@@ -1,0 +1,65 @@
+#
+# This is Git's config file.
+# (comments begin with either ";" or "#")
+#
+
+[user]
+  name = Joe Miragliuolo
+  email = sod@llawn.com
+
+[apply]
+  whitespace = nowarn
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+;[color "branch"]
+;  current = yellow reverse
+;  local = yellow
+;  remote = green
+[color "diff"]
+ meta = yellow bold
+ frag = magenta bold
+ old = red bold
+ new = green bold
+;[color "status"]
+;  added = yellow
+;  changed = green
+;  untracked = cyan
+
+[core]
+  excludefile = /Users/joemiragliuolo/.gitignore
+  excludesfile = /Users/joemiragliuolo/.gitignore
+
+[instaweb]
+  httpd=webrick
+  port=8000       ; change the port from default 1234
+
+[alias]
+  c = commit -m
+  a = add
+  aa= !git add -u && git add . && git status
+  log1 = log --pretty=oneline
+  logjoe = log --pretty=format:'%C(yellow)%h%Creset  %Cgreen%ai%Creset  %s'
+  lcrev = log --reverse --no-merges --stat @{1}..
+  llog = log --date=local
+  st = status
+  diff1 = diff @{1}
+  lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  lgb = log --graph --pretty=format:'%h -%d %s (%cr)' --abbrev-commit --date=relative
+  last  = cat-file commit HEAD
+  changes=diff --name-status -r
+  vimdiff=difftool --tool=vimdiff --no-prompt
+  opendiff=difftool --tool=opendiff --no-prompt
+  unstage=reset HEAD
+  unadd=reset HEAD
+
+# shortcuts to try sometime:
+#   ci = commit
+#   br = branch
+#   co = checkout
+#   df = diff
+#   lg = log -p
+#   who = shortlog -s --
+
