@@ -40,3 +40,6 @@
 [submodule "vim/bundle/fugitivemenu"]
 	path = vim/bundle/fugitivemenu
 	url = https://github.com/joem/vim-fugitivemenu.git
+[submodule "vim/bundle/hints_syntax"]
+	path = vim/bundle/hints_syntax
+	url = https://github.com/joem/vim-hints_syntax.git
