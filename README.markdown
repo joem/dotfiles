@@ -17,6 +17,7 @@ Create symlinks:
     ln -s ~/.dotfiles/vimrc         ~/.vimrc
     ln -s ~/.dotfiles/gvimrc        ~/.gvimrc
     ln -s ~/.dotfiles/vim           ~/.vim
+    ln -s ~/.dotfiles/vim/bundle/vim-hints/doc/vimhints.txt  ~/vimhints.txt
     ln -s ~/.dotfiles/irbrc         ~/.irbrc
     ln -s ~/.dotfiles/gitconfig     ~/.gitconfig
     ln -s ~/.dotfiles/gitignore     ~/.gitignore
