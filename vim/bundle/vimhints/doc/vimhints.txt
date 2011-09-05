@@ -341,10 +341,10 @@ Start a game of tetris (plugin): >
 Run ruby-code-indenter on current buffer: >
   \rci
 
-Start taglist (plugin): >
+Start taglist [|taglist.txt|]: >
   ,tt
 
-Start nerdtree (plugin): >
+Start nerdtree [|NERDTree|]: >
   ,nn
 
 Reverse next two characters: >
@@ -776,7 +776,7 @@ To render a .textile file as HTML to a new Vim tab: >
 To render a .textile file as HTML to a file: >
   \rf
 
-See list of all snipMate snippets for current filetype: >
+See list of all snipMate snippets for current filetype [|snipmate|]: >
   <C-R> <tab>
 
 Search the ~/hints.txt file: >
@@ -917,25 +917,41 @@ INVALUABLE help resource when making vim scripts: >
 
 Run helptags after adding a helpfile into .vim/doc/: >
   :helptags ~/.vim/doc
-Run helptags via pathogen (for bundles): >
+Run helptags via pathogen (for bundles) [|pathogen|]: >
   :call pathogen#helptags()
 
 
-Declare and add git repo as submodule: >
+Declare and add git repo as submodule [|pathogen|]: >
   git submodule add URL LOCALPATH
-Install declared submodules into newly cloned repo (from root of repo): >
+Install declared submodules into newly cloned repo (from root of repo) [|pathogen|]: >
   1. git submodule init
   2. git submodule update
 
-Update an individual submodule: >
+Update an individual submodule [|pathogen|]: >
   1. cd ~/path/to/submodule
   2. git pull origin master
-Update all submodules: >
+Update all submodules [|pathogen|]: >
   git submodule foreach git pull origin master
 
-Install vimball in other dir: >
+Install vimball in other dir [|pathogen|]: >
   1. Open vimball like normal (vim vimball.vba)
   2. :UseVimball ~/path/to/extract/to
+
+Use the expression register for math (insert mode): >
+  <C-R>=35+7<cr>
+Use the expression reg to insert result of a command (insert mode): >
+  <C-R>=system("date")<cr>
+
+(NOTE: Hammer is disabled for now since it was slowing things down a bit.)
+Preview current markup file [|hammer|]: >
+  :Hammer
+< or [|hammer|]: >
+  ,pp
+
+Start the command-t filebrowser [|command-t|]: >
+  \t
+< or [|command-t|]: >
+  <cmd-t>
 
 
 ------------------------------------------------------------------------------
@@ -1354,17 +1370,6 @@ zi      - toggle current fold (what's the difference?)
 
 (Idea: Temporarily ":map <LocalLeader>, @q" (or any macro letter) so that you can just press "," to repeat it.)
 (or: ":nnoremap <Space> @q")
-
-Use the expression register for math (insert mode): >
-  <C-R>=35+7<cr>
-Use the expression reg to insert result of a command (insert mode): >
-  <C-R>=system("date")<cr>
-
-(NOTE: Hammer is disabled for now since it was slowing things down a bit.)
-Preview current markup file: >
-  :Hammer
-< or: >
-  ,pp
 
 
 ==============================================================================
