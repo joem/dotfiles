@@ -64,16 +64,12 @@ as follows:
 
 ### Command-t
 
-The command-t extension require Vim with ruby support, and furthermore, the
-ruby code depends on a C extension for extra speed. The usual pathogen
-installation proceedure didn't work for me, but I followed these steps to make
-it work:
+As per command-t's readme, after installing or updating (even as a submodule)
+you must build the C extension:
 
-    cd ~/dotfiles/vim/bundle/command-t/ruby/command-t
-    ruby extconf.rb
-    make
+    cd ~/.vim/bundle/command-t
+    rake make
 
-That did the trick.
 
 RUBY
 ====
