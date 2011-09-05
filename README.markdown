@@ -70,6 +70,9 @@ you must build the C extension:
     cd ~/.vim/bundle/command-t
     rake make
 
+NOTE: You may need to switch to the same version of Ruby that Vim itself is
+linked to, before running the `rake make`. This is usually the system Ruby.
+
 
 RUBY
 ====
