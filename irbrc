@@ -12,14 +12,14 @@ unless defined? ETC_IRBRC_LOADED
 #  # Activate auto-completion. (disabled because Wirble does this, too)
 #  require 'irb/completion'
   
-  # Activate Wirble for colorization
-  begin
-    require 'wirble'
-    Wirble.init
-  rescue LoadError => err
-    $stderr.puts "Couldn't load Wirble: #{err}"
-  end
-  Wirble.colorize
+  ## Activate Wirble for colorization
+  #begin
+  #  require 'wirble'
+  #  Wirble.init
+  #rescue LoadError => err
+  #  $stderr.puts "Couldn't load Wirble: #{err}"
+  #end
+  #Wirble.colorize
 
   # Use the simple prompt if possible.
   IRB.conf[:PROMPT_MODE] = :SIMPLE if IRB.conf[:PROMPT_MODE] == :DEFAULT
