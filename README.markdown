@@ -26,6 +26,7 @@ Create symlinks:
     ln -s ~/.dotfiles/screenrc      ~/.screenrc
     ln -s ~/.dotfiles/Xresources    ~/.Xresources
     ln -s ~/.dotfiles/xinitrc       ~/.xinitrc
+    ln -s ~/.dotfiles/inputrc       ~/.inputrc
 
 
 I put Vim's backup and swap files in `~/.backup`, so that directory must exist. To

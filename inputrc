@@ -1,0 +1,10 @@
+# To see more inputrc settings, see 'man readline'
+
+
+# When completing case will not be taken into consideration
+set completion-ignore-case on
+
+# Step through the possible completions
+Control-j: menu-complete
+
+
