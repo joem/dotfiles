@@ -31,6 +31,10 @@ export GIT_PS1_SHOWDIRTYSTATE=true      # If unstaged (*), if staged (+)
 export GIT_PS1_SHOWUNTRACKEDFILES=true  # If untracked files (%)
 
 
+# If I start to type something and press up it will search my history and jump to the first match.
+bind '"\e[A"':history-search-backward
+bind '"\e[B"':history-search-forward
+
 ###########################
 ##        Aliases        ##
 ###########################
