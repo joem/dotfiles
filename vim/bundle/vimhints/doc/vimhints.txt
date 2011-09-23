@@ -636,6 +636,8 @@ USEFUL REGISTER: Last EX command register: >
   :
 USEFUL REGISTER: What was in vim's clipboard before the last yank: >
   0
+USEFUL REGISTER: Last / search pattern: >
+  /
 
 Begin recording a macro to <register> (where register is a-z or 0-9): >
   q<register>
@@ -952,6 +954,14 @@ Start the command-t filebrowser [|command-t|]: >
   \t
 < or [|command-t|]: >
   <cmd-t>
+
+Search files in current tree  using Ack (like a grep -ri) (NOT INSTALLED) [|ack|]: >
+  <cmd-shift-f>
+
+
+Do a replace using the previous /search term (since empty pattern defaults to last search pattern): >
+  :%s//replace-with-this/
+
 
 
 ------------------------------------------------------------------------------
@@ -1325,15 +1335,6 @@ Move temporary to the shell. If you need a quick bashing:
   press ^Z (to put vi in background) to return to original shell and press fg to return to vim back
   press :sh to go to sub shell and press ^D/exit to return to vi back
 
-
-/my complicated regexp     " Highlighted as you enter characters
-:%s//replace with this/    " You don't have to type it again
-The "trick" here (for want of a better word) is the way that you can use the search to create the regexp (and 'incsearch' highlights it as you enter characters) and then use an empty pattern in the substitution: the empty pattern defaults to the last search pattern.
-Example:
-  /blue\(\d\+\)
-  :%s//red\1/
-Equivalent to:
-  :%s/blue\(\d\+\)/red\1/
 
 
 If you open a file in Vim, make some changes, then want to check those changes compared to when you opened it (do a diff before saving), then you have a few options:
