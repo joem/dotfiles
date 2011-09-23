@@ -41,6 +41,10 @@ export MANPATH
 # For node.js
 export NODE_PATH="/usr/local/lib/node"
 
+# For ruby versions less than 1.9.x
+RUBYOPT="rubygems"
+export RUBYOPT
+
 #PLOTICUS_PREFABS=/usr/local/pl240macos/prefabs
 #export PLOTICUS_PREFABS
 
