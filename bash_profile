@@ -109,6 +109,9 @@ export CACA_DRIVER=ncurses
 # load up bash completion for git
 if [ -f ~/bin/git-completion.sh ]; then . ~/bin/git-completion.sh ; fi
 
+# load up bash completion for homebrew
+source /opt/homebrew/Library/Contributions/brew_bash_completion.sh
+
 # Load rbenv
 eval "$(rbenv init -)"
 
