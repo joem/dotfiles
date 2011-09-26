@@ -16,26 +16,26 @@
 # completions, prompt-string, env settings, etc. They should be
 # silent settings, i.e., no noise to stdout.
 
-# $HOME/.rbenv/bin      = rbenv
-# ~/bin                 = my addition for scripts
-# /opt/local/bin        = MacPorts
-# /opt/local/sbin       = MacPorts
-# /usr/local/mysql/bin  = MySQL
-# /usr/local/games      = games I've compiled w/o fink or macports
-# /Developer/AdobeAIRSDK/bin        = Adobe AIR SDK
-# /Users/joemiragliuolo/.brew/bin   = 'homebrew' package manager
-# $PATH                 = whatever the path may have been set to before this
+
+# /opt/homebrew/bin              = homebrew and homebrew-installed programs
+# $HOME/.rbenv/bin               = rbenv
+# ~/bin                          = my addition for scripts
+# /Developer/SDKs/flex_sdk_3/bin = mxmlc, etc (flex/flash compiler)
+# /usr/local/bin                 = misc things that should probably be replaced with homebrew ports
+# $PATH                          = whatever the path may have been set to before this
+# /opt/jruby/bin                 = jruby executables
 
 ####PATH=~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/games:/Developer/SDKs/AdobeAIRSDK/bin:$PATH
-PATH=$HOME/.rbenv/bin:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/games:/Developer/SDKs/flex_sdk_3/bin:/Users/joemiragliuolo/.brew/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH:/opt/jruby/bin
+####PATH=$HOME/.rbenv/bin:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/games:/Developer/SDKs/flex_sdk_3/bin:/Users/joemiragliuolo/.brew/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH:/opt/jruby/bin
+PATH=/opt/homebrew/bin:$HOME/.rbenv/bin:~/bin:/Developer/SDKs/flex_sdk_3/bin:/usr/local/bin:$PATH:/opt/jruby/bin
 export PATH
-#NOTE: later path declarations take lower precedence
+#NOTE: Later path declarations take lower precedence.
 
-# /opt/local/share/man  = MacPorts
-# /usr/local/man        = no idea? for installed-from-source stuff maybe?
-# $MANPATH              = whatever the manpath may have been set to before this
+# /opt/homebrew/share/man = manpath for homebrew-installed programs
+# /usr/local/man          = misc things that should probably be replaced with homebrew ports
+# $MANPATH                = whatever the manpath may have been set to before this
 
-MANPATH=/opt/local/share/man:/usr/local/man:$MANPATH
+MANPATH=/opt/homebrew/share/man:/usr/local/man:$MANPATH
 export MANPATH
 
 # For node.js
@@ -92,9 +92,6 @@ export CACA_DRIVER=ncurses
 #bind "set bell-style none"
 ## This allows you to automatically show completion without double tab-ing:
 #bind "set show-all-if-ambiguous On"
-
-# fink init
-test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 ### DISABLED:
 ###....not sure if I need any of this. Maybe just a "export DISPLAY=:0.0"

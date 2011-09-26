@@ -93,9 +93,6 @@ alias wcdg='wcd -g'
 alias h='history | grep'
 alias g=grep
 
-# have port run with a lowered scheduling priority
-alias port="sudo nice -n +18 /opt/local/bin/port"
-
 
 
 ###########################
