@@ -39,7 +39,8 @@ MANPATH=/opt/homebrew/share/man:/usr/local/man:$MANPATH
 export MANPATH
 
 # For node.js
-export NODE_PATH="/usr/local/lib/node"
+NODE_PATH=/opt/homebrew/lib/node_modules:$NODE_PATH
+export NODE_PATH
 
 # For ruby versions less than 1.9.x
 RUBYOPT="rubygems"
