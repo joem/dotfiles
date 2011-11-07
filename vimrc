@@ -125,6 +125,7 @@ let g:DrChipTopLvlMenu= "Plugin."   "put its menu in plugin submenu
 
 " Settings for SnipMate
 let g:snips_author= 'joem <sod@llawn.com>'
+let g:snippets_dir= '~/.vim/bundle/my_snipmate_snippets/snippets'
 
 " Settings for fugitive
 let g:fugitive_git_executable = '/usr/local/git/bin/git'
