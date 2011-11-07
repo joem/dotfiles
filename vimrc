@@ -354,7 +354,7 @@ nmap <LocalLeader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
 
 " TODO: make a ':Rebuildhelptags' command that does:
 "   :helptags ~/.vim/doc
-"   :call pathogen#helptags()
+"   :Helptags             " replaces ':call pathogen#helptags()' in pathogen
 
 " Disable beeping and flashing
 set vb t_vb=
