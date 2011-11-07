@@ -5,9 +5,10 @@ let g:secure_modelines_verbose=0 " securemodelines vimscript
 let g:secure_modelines_modelines = 15 " 15 available modelines
 
 " ---------------------------------------------------------------------------
+" load the pathogen bundle
+runtime bundle/pathogen/autoload/pathogen.vim
 " make pathogen load all bundles (plugins):
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()    " Not sure if these needs to be run each time
+call pathogen#infect()
 
 " ---------------------------------------------------------------------------
 " operational settings
