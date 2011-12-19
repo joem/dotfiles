@@ -130,6 +130,12 @@ let g:snippets_dir= '~/.vim/bundle/my_snipmate_snippets/snippets'
 " Settings for fugitive
 let g:fugitive_git_executable = '/usr/local/git/bin/git'
 
+" Settings for NERD_commenter
+let g:NERDCustomDelimiters = {
+        \ 'csound': { 'left': ';'},
+        \ 'ck': { 'left': '//'}
+    \ }
+
 " ---------------------------------------------------------------------------
 " statusline setup
 hi User1 ctermbg=green ctermfg=red   guibg=green guifg=red
