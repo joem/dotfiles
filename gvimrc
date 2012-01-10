@@ -111,7 +111,9 @@ endfunction
 " If the parameter is a directory, cd into it
 function s:CdIfDirectory(directory)
   let explicitDirectory = isdirectory(a:directory)
-  let directory = explicitDirectory || empty(a:directory)
+  "let directory = explicitDirectory || empty(a:directory)
+  """ I don't want it opening nerdtree when i don't explicitly specify a dir!
+  let directory = explicitDirectory
 
   if explicitDirectory
     exe "cd " . fnameescape(a:directory)
