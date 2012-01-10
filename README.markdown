@@ -74,6 +74,13 @@ are new commits in that bundle (and that those are uncommited). So all you need
 to do is `git add` it like it's any other file, and then `git commit` and
 you'll be all up to date.
 
+### Removing a submodule
+
+1. Delete the relevant line from the .gitmodules file.
+2. Delete the relevant section from .git/config.
+3. Run git rm --cached path\_to\_submodule (no trailing slash).
+4. Commit and delete the now untracked submodule files.
+
 
 RUBY
 ====
