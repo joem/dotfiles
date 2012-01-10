@@ -454,6 +454,8 @@ when 'foo' isn't found in one of the files): >
 
 Reverse all lines in a file: >
   :g/^/m0
+Reverse all lines in a range (last number is 1 less than start of range): >
+  :50,60g/^/m49
 
 Jump to the first 'm' in a line: >
   fm
@@ -612,20 +614,6 @@ Delete lines NOT matching pattern: >
   :g!/.*foo.*/d
 
 
-
-Delete line into <register> (where register is a-z or 0-9): >
-  "<register>dd
-EXAMPLE: Delete line into register z: >
-  "zdd
-Paste from <register> (normal mode): >
-  "<register>p
-Paste from <register> (insert mode) (^r is control-r): >
-  ^r<register>
-Insert the answer to a math expression in insert mode: >
-  ^r=EXPRESSION         (for example, ^r=35*67 inserts 2345)
-Insert word under cursor (command mode): >
-  ^r^w
-
 Display contents of all registers: >
   :reg
 USEFUL REGISTER: System clipboard register: >
@@ -638,6 +626,40 @@ USEFUL REGISTER: What was in vim's clipboard before the last yank: >
   0
 USEFUL REGISTER: Last / search pattern: >
   /
+
+Delete line into <register> (where register is a-z or 0-9): >
+  "<register>dd
+EXAMPLE: Delete line into register z: >
+  "zdd
+Paste from <register> (normal mode): >
+  "<register>p
+Paste from <register> (insert or command mode): >
+  <C-r><register>
+Insert the answer to a math expression in insert mode: >
+  <C-r>=EXPRESSION         (for example, <C-r>=35*67 inserts 2345)
+Insert word under cursor (command mode): >
+  <C-r><C-w>
+
+Paste from the system clipboard (normal mode): >
+  "*p
+< or: >
+  "+p
+Paste last search pattern used (normal mode): >
+  "/p
+Paste last command line used (normal mode): >
+  ":p
+
+Paste from the system clipboard (insert or command mode): >
+  <C-r>*
+< or: >
+  <C-r>+
+Paste last search pattern used (insert or command mode): >
+  <C-r>/
+Paste last command line used (insert or command mode): >
+  <C-r>:
+Paste last yanked/cut/copied text (insert or command mode): >
+  <C-r>"
+
 
 Begin recording a macro to <register> (where register is a-z or 0-9): >
   q<register>
@@ -653,6 +675,27 @@ Paste contents of a macro: >
   "<register>p
 Yank visual selection into a register (ie. after edit a macro's contents): >
   "<register>y
+Run a EX command from a register: >
+  :@<register>
+Run a EX command from the yank register: >
+  :@"
+
+
+Put line containing 'foo' after each line matching PATTERN: >
+  :g/<PATTERN>/put ='foo'
+Put blank line after each line matching PATTERN: >
+  :g/<PATTERN>/put _
+Put line containing 'foo' before each line matching PATTERN: >
+  :g/<PATTERN>/-put ='foo'
+Put blank line before each line matching PATTERN: >
+  :g/<PATTERN>/-put _
+
+Copy the entire buffer to the system clipboard: >
+  :%y+
+
+Define a search pattern manually (does not jump to result until 'n' is hit in normal mode): >
+  :let @/ = 'foo'
+
 
 Go to man page of word under cursor: >
   K
@@ -711,6 +754,7 @@ Make a horizontal split be a vertical split: >
   <C-w>H
 Make a vertical split be a horizontal split: >
   <C-w>K
+(Might need to do <C-w>t <C-w>K or <C-w>t <C-w>H in the above switches, maybe.)
 
 Toggle current line (or visual selection) as comment: >
   gcc
@@ -1188,7 +1232,7 @@ Which presents you with a list of matching destinations that you can choose from
 
 
 normal undo is u
-^r is redo
+<C-r> is redo
 Using :undolist you can have a look at the possible undo states. With :earlier 20s / 1m / 2h you can then go back 20 seconds, one minute etc.
 Traveling forward in time works using :later and a timedelta as argument.
 
