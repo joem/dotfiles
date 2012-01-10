@@ -74,17 +74,6 @@ are new commits in that bundle (and that those are uncommited). So all you need
 to do is `git add` it like it's any other file, and then `git commit` and
 you'll be all up to date.
 
-### Command-t
-
-As per command-t's readme, after installing or updating (even as a submodule)
-you must build the C extension:
-
-    cd ~/.vim/bundle/command-t
-    rake make
-
-NOTE: You may need to switch to the same version of Ruby that Vim itself is
-linked to, before running the `rake make`. This is usually the system Ruby.
-
 
 RUBY
 ====
