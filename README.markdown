@@ -41,8 +41,9 @@ My preferences for Vim are stored in `.dotfiles/vimrc` and `.dotfiles/gvimrc`
 respectively. All plugins and scripts are stored in the `.dotfiles/vim`
 directory.
 
-Adding Plugin Bundles
+Plugin Bundles
 ---------------------
+### Adding a submodule
 
 Plugins that are published on github can be installed as submodules. For
 example, to install the [JavaScript bundle][jsbun], follow these steps:
@@ -62,6 +63,16 @@ as follows:
 
     git add .
     git ci -m "Added the javascript bundle"
+
+### Updating a submodule
+
+Simple. Just `cd` to that submodule's directory and run `git pull` to update
+it.
+
+Now, when you're back in the parent repo, a `git status` will tell you there
+are new commits in that bundle (and that those are uncommited). So all you need
+to do is `git add` it like it's any other file, and then `git commit` and
+you'll be all up to date.
 
 ### Command-t
 
