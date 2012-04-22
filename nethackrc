@@ -34,10 +34,38 @@ OPTIONS=autodig,!autopickup
 #---------------------------------------
 
 #----------MENU COLORS----------
-#MENUCOLOR="[Cc]ursed"=orange&bold&underline
-#MENUCOLOR="[Uu]ncursed"=yellow
-#MENUCOLOR="[Bb]lessed"=lightgreen
-#MENUCOLOR="-[0-9]"=orange
+OPTIONS=menucolors
+MENUCOLOR="[Cc]ursed"=orange&bold&underline
+MENUCOLOR="[Uu]ncursed"=yellow
+MENUCOLOR="[Bb]lessed"=lightgreen
+MENUCOLOR="-[0-9]"=orange
+#
+#MENUCOLOR="* cursed *"=red
+#MENUCOLOR="* unholy *"=red
+#MENUCOLOR="* blessed *"=green
+#MENUCOLOR="* holy *"=green
+#-------------------------------
+
+#----------STATUS COLORS----------
+#(These are for the patched unnethack, and can be ignored for normal nethack)
+OPTIONS=statuscolors
+# HP
+STATUSCOLOR=hp%100=green,hp%66=yellow,hp%50=orange
+STATUSCOLOR=hp%33=red&bold,hp%15:red&inverse,hp%0:red&inverse&blink
+# Pw
+STATUSCOLOR=pw%100=green,pw%66=yellow,pw%50:orange,pw%33=red&bold
+# Carry
+STATUSCOLOR=burdened:yellow,stressed:orange,strained:red&bold
+STATUSCOLOR=overtaxed:red&inverse,overloaded:red&inverse&blink
+# Hunger
+STATUSCOLOR=satiated:yellow,hungry:orange,weak:red&bold
+STATUSCOLOR=fainting:red&inverse,fainted:red&inverse&blink
+# Mental
+STATUSCOLOR=hallu:yellow,conf:orange,stun:red&bold
+# Health
+STATUSCOLOR=ill:red&inverse,foodpois:red&inverse,slime:red&inverse
+# Other
+STATUSCOLOR=held:red&inverse,blind:red&inverse
 #-------------------------------
 
 # DUNGEON = 032 179 196 218 191 192 217 197 193 194 180 195 250 254 254 043 043 240 241 250 176 177 060 062 060 062 095 124 092 035 244 247 250 247 250 250 035 035 032 035 247
