@@ -170,15 +170,6 @@ dec2hex() { printf '%x\n' $@ ; }
 ##     the command prompt    ##
 ###############################
 
-### by default, it looks like
-# computer:directory user$
-### [time user directory]$
-#PS1="[\t \u \W]\\$ "
-### computer:directory $
-#PS1="imac:\W \$"
-### computer:directory <git branch, if it exists> $
-#PS1='imac:\W$(__git_ps1 " <%s>") \$ '
-
 #BLACK=`tput sgr0; tput setaf 0`
 #RED=`tput sgr0; tput setaf 1`
 #GREEN=`tput sgr0; tput setaf 2`
@@ -198,27 +189,39 @@ CYAN="\[\033[0;36m\]"
 GREY="\[\033[0;37m\]"
 BLUE="\[\033[0;34m\]"
 COLORS_RESET="\[\033[0m\]"
+COMP_NAME="imac"
 #PS_CLEAR="\[\033[0m\]"
 #SCREEN_ESC="\[\033k\033\134\]"
+
+
+### by default, it looks like
+# computer:directory user$
+### [time user directory]$
+#PS1="[\t \u \W]\\$ "
+### computer:directory $
+#PS1="$COMP_NAME:\W \$"
+### computer:directory <git branch, if it exists> $
+#PS1='$COMP_NAME:\W$(__git_ps1 " <%s>") \$ '
+
 
 # a nice b&w prompt w/o git info
 prompt_simple() {
   #unset PROMPT_COMMAND
-  PS1="imac:\W \$"
+  PS1="$COMP_NAME:\W \$"
 }
 
 # a nice b&w prompt with that display git info if in a repo
 prompt_bw() {
-  PS1='imac:\W$(__git_ps1 " <%s>") \$ '
+  PS1='$COMP_NAME:\W$(__git_ps1 " <%s>") \$ '
   # __git_ps1 adds: (*) If unstaged, (+) if staged, (%) if untracked files
 }
 
 # a nice color prompt with that display git info if in a repo
 prompt_color() {
-  #PS1="${yellow}imac:\W"
+  #PS1="${yellow}$COMP_NAME:\W"
   #PS1+='$(__git_ps1 " <%s>")'
   #PS1+=" \$ ${colors_reset}"
-  PS1="\[${CYAN}\]imac:\W\[${YELLOW}\]"
+  PS1="\[${CYAN}\]$COMP_NAME:\W\[${YELLOW}\]"
   PS1+='$(__git_ps1 " <%s>")'
   PS1+="\[${CYAN}\] \$ \[${COLORS_RESET}\]"
   # __git_ps1 adds: (*) If unstaged, (+) if staged, (%) if untracked files
