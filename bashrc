@@ -52,8 +52,8 @@ alias lsg='ls | grep $1'
 alias llg='ll | grep $1'
 ## quickly open vim
 #alias v='vim'      # conflicts with my 'v' script that opens vim in nerdtree mode
-# cat and highlight
-alias cath='pygmentize -g'
+## cat and highlight
+#alias cath='pygmentize -g'
 
 # tree with ANSI
 alias tree="tree -A"
@@ -61,8 +61,8 @@ alias tree="tree -A"
 # this 'rmm' isn't working quite right- you have to say 'y' after everything.
 #alias rmm="~/bin/rm-to-trash.py"
 
-# this 'trash' command was installed with osxutils
-alias rmm="trash"
+## this 'trash' command was installed with osxutils
+#alias rmm="trash"
 
 # fdc is oposite of cdf. it opens a finder window of the current terminal dir
 alias fdc="open ."
@@ -78,21 +78,23 @@ alias adiff="opendiff"
 # note: my vimdiff is itself a symlink to the mvim script
 alias vdiff='vimdiff'
 
-# open a Shoes ruby app in Shoes itsef
-alias shoes="open -a Shoes.app "
+## open a Shoes ruby app in Shoes itsef
+#alias shoes="open -a Shoes.app "
 
-# for commandline-vlc (Video Lan Client)
-alias cvlc='/Applications/VLC.app/Contents/MacOS/vlc'
+## for commandline-vlc (Video Lan Client)
+#alias cvlc='/Applications/VLC.app/Contents/MacOS/vlc'
 
-# for commandline access to Darwine (Windows emulator)
-alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
+## for commandline access to Darwine (Windows emulator)
+#alias wine='/Applications/Darwine/Wine.bundle/Contents/bin/wine'
 
-# for quick access to wcd's graphical mode
-alias wcdg='wcd -g'
+## for quick access to wcd's graphical mode
+#alias wcdg='wcd -g'
 
 alias h='history | grep'
 alias g=grep
 
+# alias to love
+alias love="/Applications/love.app/Contents/MacOS/love"
 
 
 ###########################
@@ -156,11 +158,11 @@ hex2dec() { printf '%d\n' 0x$@ ; }
 dec2hex() { printf '%x\n' $@ ; }
 # maybe use "${1}" instead of "$@"???
 
-# wcd is whatever change directory - a quick dir changer
-function wcd() {
-  $HOME/bin/wcd.exe $*
-  . $HOME/bin/wcd.go
-}
+## wcd is whatever change directory - a quick dir changer
+#function wcd() {
+#  $HOME/bin/wcd.exe $*
+#  . $HOME/bin/wcd.go
+#}
 
 
 
@@ -173,9 +175,9 @@ function wcd() {
 ### [time user directory]$
 #PS1="[\t \u \W]\\$ "
 ### computer:directory $
-#PS1="macbook:\W \$"
+#PS1="imac:\W \$"
 ### computer:directory <git branch, if it exists> $
-#PS1='macbook:\W$(__git_ps1 " <%s>") \$ '
+#PS1='imac:\W$(__git_ps1 " <%s>") \$ '
 
 #BLACK=`tput sgr0; tput setaf 0`
 #RED=`tput sgr0; tput setaf 1`
@@ -202,21 +204,21 @@ COLORS_RESET="\[\033[0m\]"
 # a nice b&w prompt w/o git info
 prompt_simple() {
   #unset PROMPT_COMMAND
-  PS1="macbook:\W \$"
+  PS1="imac:\W \$"
 }
 
 # a nice b&w prompt with that display git info if in a repo
 prompt_bw() {
-  PS1='macbook:\W$(__git_ps1 " <%s>") \$ '
+  PS1='imac:\W$(__git_ps1 " <%s>") \$ '
   # __git_ps1 adds: (*) If unstaged, (+) if staged, (%) if untracked files
 }
 
 # a nice color prompt with that display git info if in a repo
 prompt_color() {
-  #PS1="${yellow}macbook:\W"
+  #PS1="${yellow}imac:\W"
   #PS1+='$(__git_ps1 " <%s>")'
   #PS1+=" \$ ${colors_reset}"
-  PS1="\[${CYAN}\]macbook:\W\[${YELLOW}\]"
+  PS1="\[${CYAN}\]imac:\W\[${YELLOW}\]"
   PS1+='$(__git_ps1 " <%s>")'
   PS1+="\[${CYAN}\] \$ \[${COLORS_RESET}\]"
   # __git_ps1 adds: (*) If unstaged, (+) if staged, (%) if untracked files
