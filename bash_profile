@@ -17,37 +17,22 @@
 # silent settings, i.e., no noise to stdout.
 
 
-# /opt/homebrew/bin              = homebrew and homebrew-installed programs
-# $HOME/.rbenv/bin               = rbenv
 # ~/bin                          = my addition for scripts
-# /Developer/SDKs/flex_sdk_3/bin = mxmlc, etc (flex/flash compiler)
-# /usr/local/bin                 = misc things that should probably be replaced with homebrew ports
 # $PATH                          = whatever the path may have been set to before this
-# /opt/jruby/bin                 = jruby executables
+# /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin   = the flex sdk installed via homebrew
 
-####PATH=~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/games:/Developer/SDKs/AdobeAIRSDK/bin:$PATH
-####PATH=$HOME/.rbenv/bin:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/games:/Developer/SDKs/flex_sdk_3/bin:/Users/joemiragliuolo/.brew/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH:/opt/jruby/bin
-PATH=/opt/homebrew/bin:$HOME/.rbenv/bin:~/bin:/Developer/SDKs/flex_sdk_3/bin:/usr/local/bin:$PATH:/opt/jruby/bin
+PATH=~/bin:$PATH:/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin
 export PATH
 #NOTE: Later path declarations take lower precedence.
 
-# /opt/homebrew/share/man = manpath for homebrew-installed programs
-# /usr/local/man          = misc things that should probably be replaced with homebrew ports
-# $MANPATH                = whatever the manpath may have been set to before this
+# paths for homebrew are now handled by putting it in the recommended /usr/local dir
+# paths for rbenv are now handled by the 'eval "$(rbenv init -)"' command later
 
-MANPATH=/opt/homebrew/share/man:/usr/local/man:$MANPATH
-export MANPATH
-
-# For node.js
-NODE_PATH=/opt/homebrew/lib/node_modules:$NODE_PATH
-export NODE_PATH
+export FLEX_HOME=/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec
 
 # For ruby versions less than 1.9.x
 RUBYOPT="rubygems"
 export RUBYOPT
-
-#PLOTICUS_PREFABS=/usr/local/pl240macos/prefabs
-#export PLOTICUS_PREFABS
 
 # fuck that you have new mail shit
 unset MAILCHECK
@@ -56,23 +41,6 @@ unset MAILCHECK
 #export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export GREP_OPTIONS='--color=auto' GREP_COLOR='0;32'
 export CLICOLOR=1 
-# export COLOR_NC='\e[0m' # No Color
-# export COLOR_WHITE='\e[1;37m'
-# export COLOR_BLACK='\e[0;30m'
-# export COLOR_BLUE='\e[0;34m'
-# export COLOR_LIGHT_BLUE='\e[1;34m'
-# export COLOR_GREEN='\e[0;32m'
-# export COLOR_LIGHT_GREEN='\e[1;32m'
-# export COLOR_CYAN='\e[0;36m'
-# export COLOR_LIGHT_CYAN='\e[1;36m'
-# export COLOR_RED='\e[0;31m'
-# export COLOR_LIGHT_RED='\e[1;31m'
-# export COLOR_PURPLE='\e[0;35m'
-# export COLOR_LIGHT_PURPLE='\e[1;35m'
-# export COLOR_BROWN='\e[0;33m'
-# export COLOR_YELLOW='\e[1;33m'
-# export COLOR_GRAY='\e[0;30m'
-# export COLOR_LIGHT_GRAY='\e[0;37m'
 
 # set vim as default editor for programs that care
 export EDITOR='vim'
@@ -86,34 +54,20 @@ export HISTCONTROL=ignoredups
 #export HISTIGNORE="ls:cd:cd ..:..*: *"
 export HISTIGNORE="ls:ll:la:lla:cd:cd .."
 
-export CACA_DRIVER=ncurses
-
 ## bash completion settings (actually, these are readline settings):
 ## No bell, because it's damn annoying:
 #bind "set bell-style none"
 ## This allows you to automatically show completion without double tab-ing:
 #bind "set show-all-if-ambiguous On"
 
-### DISABLED:
-###....not sure if I need any of this. Maybe just a "export DISPLAY=:0.0"
-## Set the DISPLAY variable -- works for Apple X11 with Fast User Switching
-#if [[ -z $DISPLAY && -z $SSH_CONNECTION ]]; then
-#    disp_no=($( ps -awx | grep -F X11.app | awk '{print $NF}' | grep -e ":[0-9]"  ))
-#    if [[ -n $disp_no ]];then
-#        export DISPLAY=${disp_no}.0
-#    else
-#        export DISPLAY=:0.0
-#    fi
-#    echo "DISPLAY has been set to $DISPLAY"
-#fi
+# load up bash completion for git (from homebrew git)
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
 
-# load up bash completion for git
-if [ -f ~/bin/git-completion.sh ]; then . ~/bin/git-completion.sh ; fi
+# bash completion for homebrew is now handled automatically after making some symlink
 
-# load up bash completion for homebrew
-source /opt/homebrew/Library/Contributions/brew_bash_completion.sh
-
-# Load rbenv
+## Load rbenv
 eval "$(rbenv init -)"
 
 # load up .bashrc too
@@ -135,9 +89,11 @@ GRAY='\e[0;37m'
 WHITE='\e[1;37m'
 NC='\e[0m'              # No Color
 
-# Looks best on a black background.....
+## Colorized version looks best on a black background...
 #echo -e "${cyan}This is BASH ${red}${BASH_VERSION%.*}\
 #${cyan} - DISPLAY on ${red}$DISPLAY${NC}\n"
+
+# No color version is simpler...
 echo -e "This is BASH ${BASH_VERSION%.*}\
  - DISPLAY on $DISPLAY\n"
 
