@@ -1,6 +1,9 @@
 Installation
+------------
 
-    git clone git://github.com/joem/dotfiles.git
+First clone this repo:
+
+    git clone git://github.com/joem/dotfiles.git ~/.dotfiles
 
 Where possible, Vim plugins are installed as git submodules. Check these out by
 running the commands:
@@ -13,20 +16,13 @@ Create symlinks:
 
     ln -s ~/.dotfiles/bashrc        ~/.bashrc
     ln -s ~/.dotfiles/bash_profile  ~/.bash_profile
-    ln -s ~/.dotfiles/profile       ~/.profile
     ln -s ~/.dotfiles/vimrc         ~/.vimrc
     ln -s ~/.dotfiles/gvimrc        ~/.gvimrc
     ln -s ~/.dotfiles/vim           ~/.vim
     ln -s ~/.dotfiles/vim/bundle/vimhints/doc/vimhints.txt ~/vimhints.txt
-    ln -s ~/.dotfiles/irbrc         ~/.irbrc
     ln -s ~/.dotfiles/gitconfig     ~/.gitconfig
     ln -s ~/.dotfiles/gitignore     ~/.gitignore
-    ln -s ~/.dotfiles/nanorc        ~/.nanorc
     ln -s ~/.dotfiles/nethackrc     ~/.nethackrc
-    ln -s ~/.dotfiles/screenrc      ~/.screenrc
-    ln -s ~/.dotfiles/Xresources    ~/.Xresources
-    ln -s ~/.dotfiles/xinitrc       ~/.xinitrc
-    ln -s ~/.dotfiles/inputrc       ~/.inputrc
 
 
 I put Vim's backup and swap files in `~/.backup`, so that directory must exist. To
@@ -35,15 +31,13 @@ be sure, run:
     mkdir ~/.backup
 
 VIM
-===
+---
 
 My preferences for Vim are stored in `.dotfiles/vimrc` and `.dotfiles/gvimrc`
 respectively. All plugins and scripts are stored in the `.dotfiles/vim`
 directory.
 
-Plugin Bundles
----------------------
-### Adding a submodule
+### Adding a plugin bundle via submodule
 
 Plugins that are published on github can be installed as submodules. For
 example, to install the [JavaScript bundle][jsbun], follow these steps:
@@ -81,19 +75,25 @@ you'll be all up to date.
 3. Run git rm --cached path\_to\_submodule (no trailing slash).
 4. Commit and delete the now untracked submodule files.
 
+HOMEBREW
+--------
+
+I use [homebrew][homebrew] to install all kinds of programs and things. Go to that page and install it using their instructions, as it really is simple and it works so much better if installed the way they want.
+
+[homebrew]: http://mxcl.github.com/homebrew/
 
 RUBY
-====
+----
 
-My preferences for IRB customisations are stored in `.dotfiles/irbrc`. To get
-the most from these, you should install the [interactive_editor][i_editor] and
-[awesome_print][ap] gems, by running:
+I use [rbenv][rbenv]/[ruby-build][rubybuild] (installed via homebrew) to manage
+different ruby environments. The configuration for this is already in the
+appropriate dotfiles here.
 
-    gem install interactive_editor awesome_print
-
+[rbenv]: https://github.com/sstephenson/rbenv
+[rubybuild]: https://github.com/sstephenson/ruby-build
 
 CREDITS
-=======
+-------
 
 When I decided to put my repo on GitHub, I wanted to clean it up. While the
 submodule feature is built into Git and my .dotfiles directory was originally
