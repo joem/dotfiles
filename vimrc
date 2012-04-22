@@ -93,7 +93,9 @@ let Tlist_Compact_Format=0
 let Tlist_WinWidth=28             " width of taglist
 let Tlist_Exit_OnlyWindow=1
 let Tlist_File_Fold_Auto_Close = 1
-let Tlist_Ctags_Cmd = '/sw/bin/ctags'
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+" actionscript language
+let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
 
 " Settings for :TOhtml
 let html_number_lines=1
@@ -280,7 +282,8 @@ nnoremap <s-space> <PageUp>
 " ---------------------------------------------------------------------------
 " setup for the visual environment
 if $TERM =~ '^xterm'
-        set t_Co=16		" changed from 256 
+        "set t_Co=16   " changed from 256 
+        set t_Co=256
 elseif $TERM =~ '^screen-bce'
         set t_Co=256            " just guessing
 elseif $TERM =~ '^rxvt'
