@@ -97,6 +97,16 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 " actionscript language
 let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
 
+" Settings for tagbar
+let g:tagbar_width = 28
+let g:tagbar_expand = 1
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+" actionscript language
+let g:tagbar_type_actionscript = {
+      \   'ctagstype' : 'actionscript',
+      \   'kinds'     : [ 'c:class', 'f:method', 'p:property', 'v:variable' ]
+      \ }
+
 " Settings for :TOhtml
 let html_number_lines=1
 let html_use_css=1
