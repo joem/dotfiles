@@ -29,8 +29,8 @@
 ;  untracked = cyan
 
 [core]
-  excludefile = /Users/joemiragliuolo/.gitignore
-  excludesfile = /Users/joemiragliuolo/.gitignore
+  excludefile = ~/.gitignore
+  excludesfile = ~/.gitignore
 
 [instaweb]
   httpd=webrick
