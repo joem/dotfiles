@@ -54,6 +54,7 @@
   opendiff=difftool --tool=opendiff --no-prompt
   unstage=reset HEAD
   unadd=reset HEAD
+  newcommits = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative ..origin/master
 
 # shortcuts to try sometime:
 #   ci = commit
