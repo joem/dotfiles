@@ -139,9 +139,6 @@ let g:DrChipTopLvlMenu= "Plugin."   "put its menu in plugin submenu
 let g:snips_author= 'joem <sod@llawn.com>'
 let g:snippets_dir= '~/.vim/bundle/my_snipmate_snippets/snippets'
 
-" Settings for fugitive
-let g:fugitive_git_executable = '/usr/local/git/bin/git'
-
 " Settings for NERD_commenter
 let g:NERDCustomDelimiters = {
         \ 'csound': { 'left': ';'},
@@ -187,14 +184,6 @@ if has('statusline')
         "highlight StatusLine    ctermfg=White ctermbg=DarkBlue cterm=bold
         "highlight StatusLineNC  ctermfg=White ctermbg=DarkBlue cterm=NONE
 endif
-
-"" My customizations to make the GitBranchInfoString go from the
-"" default " Git [branch][branches]" to my "[Git:  branch]"
-"let g:git_branch_status_head_current=1    " show just the current head branch name 
-"let g:git_branch_status_text=" [Git: "    " text to show before the branches (default: ' Git ')
-"let g:git_branch_status_nogit=""          " msg if no Git repo on the cur dir (default: 'No Git')
-"let g:git_branch_status_around=" ]"       " Chars to put around branch string (default: '[]')
-"let g:git_branch_status_ignore_remotes=1  " Ignore the remote branches
 
 
 " ---------------------------------------------------------------------------
@@ -326,9 +315,6 @@ if has('autocmd')
 
         " improve legibility
         au BufRead quickfix setlocal nobuflisted wrap number
-
-        "" configure various extenssions
-        "let git_diff_spawn_mode=2
 
         " improved formatting for markdown
         " http://plasticboy.com/markdown-vim-mode/
