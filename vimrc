@@ -60,7 +60,7 @@ set listchars=tab:▷⋅,trail:⋅,nbsp:⋅ " and only tabs, trailing spaces, nb
 let g:is_posix = 1            " consider all shell scripts as POSIX
 
 "make
-autocmd FileType make set noexpandtab   "use tabs instead of spaces in makefiles
+autocmd FileType make setlocal noexpandtab   "use tabs instead of spaces in makefiles
 
 "python
 autocmd FileType python set tabstop=4     " 4 spaces in python files
