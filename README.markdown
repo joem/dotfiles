@@ -30,6 +30,11 @@ be sure, run:
 
     mkdir ~/.backup
 
+Also, if you want to speed up a terminal's start time, add a hushlogin file to your
+home dir to skip checking the last login:
+
+    touch ~/.hushlogin
+
 VIM
 ---
 
