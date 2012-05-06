@@ -3,8 +3,10 @@ if has("gui_macvim")
   set fuoptions=maxhorz,maxvert
 
   " Set window size
-  set lines=52      "biggest size that still allows for tab bar
-  set columns=104   "100 editable columns + 4 number columns
+  "set lines=52      "biggest size that still allows for tab bar
+  set lines=77
+  "set columns=104   "100 editable columns + 4 number columns
+  set columns=150
   ""set columns=136   "for when NERDTree is open
 
   " Command-T for CommandT
