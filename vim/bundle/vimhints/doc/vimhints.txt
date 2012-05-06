@@ -1007,6 +1007,23 @@ Do a replace using the previous /search term (since empty pattern defaults to la
   :%s//replace-with-this/
 
 
+In insert mode, type a ½ (1/2) character (using digraphs): >
+  <C-k> 12
+In insert mode, type a æ (AE) character (using digraphs): >
+  <C-k> ae
+In insert mode, type an ö (o with umlaut) (using digraphs): >
+  <C-k> o:
+See a list of all digraphs: >
+  :dig
+See a searchable (help file) list of all digraphs: >
+  :h digraph-table
+
+Convert markdown links in the current buffer to referenced markdown links: >
+  :%! formd -r
+Convert markdown links in the current buffer to inline markdown links: >
+  :%! formd -i
+
+
 
 ------------------------------------------------------------------------------
 not formatted well below here:
@@ -1014,6 +1031,11 @@ not formatted well below here:
 
 <C-O>    : retrace your movements in file (old)
 <C-I>    : retrace your movements in file (new)
+
+
+Consider adding mappings for 'formd':
+nmap <leader>fr :%! ~/bin/formd -r<CR>
+nmap <leader>fi :%! ~/bin/formd -i<CR>
 
 " You can also use ! on a visual selection. Select an area with one of the
 visualmode
