@@ -61,7 +61,7 @@ As well as checkout out the git repo into the
 as follows:
 
     git add .
-    git ci -m "Added the javascript bundle"
+    git ci -m "Add the javascript bundle"
 
 ### Updating a submodule
 
