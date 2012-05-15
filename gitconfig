@@ -45,6 +45,7 @@
   lcrev = log --reverse --no-merges --stat @{1}..
   llog = log --date=local
   st = status
+  s = status --short
   diff1 = diff @{1}
   lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lgb = log --graph --pretty=format:'%h -%d %s (%cr)' --abbrev-commit --date=relative
