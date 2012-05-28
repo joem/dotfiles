@@ -22,11 +22,11 @@ endif
 " based on "JavaScript" VIM syntax by Claudio Fleiner <claudio@fleiner.com>
 
 syn case ignore
-syn match   actionScriptLineComment			"\/\/.*$"
-syn match   actionScriptCommentSkip			"^[ \t]*\*\($\|[ \t]\+\)"
-syn region  actionScriptCommentString			start=+"+  skip=+\\\\\|\\"+  end=+"+ end=+\*/+me=s-1,he=s-1 contains=actionScriptSpecial,actionScriptCommentSkip,@htmlPreproc
-syn region  actionScriptComment2String			start=+"+  skip=+\\\\\|\\"+  end=+$\|"+  contains=actionScriptSpecial,@htmlPreproc
-syn region  actionScriptComment				start="/\*"  end="\*/" contains=actionScriptCommentString,actionScriptCharacter,actionScriptNumber
+syn match   actionScriptLineComment			"\/\/.*$" contains=actionScriptTodo
+syn match   actionScriptCommentSkip			"^[ \t]*\*\($\|[ \t]\+\)" contains=actionScriptTodo
+syn region  actionScriptCommentString			start=+"+  skip=+\\\\\|\\"+  end=+"+ end=+\*/+me=s-1,he=s-1 contains=actionScriptSpecial,actionScriptCommentSkip,actionScriptTodo,@htmlPreproc
+syn region  actionScriptComment2String			start=+"+  skip=+\\\\\|\\"+  end=+$\|"+  contains=actionScriptSpecial,actionScriptTodo,@htmlPreproc
+syn region  actionScriptComment				start="/\*"  end="\*/" contains=actionScriptCommentString,actionScriptCharacter,actionScriptNumber,actionScriptTodo
 syn match   actionScriptSpecial				"\\\d\d\d\|\\."
 syn region  actionScriptStringD				start=+"+  skip=+\\\\\|\\"+  end=+"+  contains=actionScriptSpecial,@htmlPreproc
 syn region  actionScriptStringS				start=+'+  skip=+\\\\\|\\'+  end=+'+  contains=actionScriptSpecial,@htmlPreproc
@@ -83,10 +83,13 @@ syn keyword as3Constants			ALPHA BLUE GREEN RED DARKEN  DIFFERENCE  ERASE  HARDL
 syn keyword actionScriptInclude #include #initClip #endInitClip
 syn keyword as3Errors EOFError  IllegalOperationError  IOError  MemoryError  ScriptTimeoutError  StackOverflowError ArgumentError DefinitionError EvalError RangeError ReferenceError SecurityError SyntaxError TypeError URIError VerifyError VideoError InvalidSWFError
 syn keyword as3Events	DataEvent ErrorEvent Event ScrollEvent ProgressEvent SecurityErrorEvent ComponentEvent ProgressEvent IOErrorEvent ComponentEvent ColorPickerEvent ListEvent MouseEvent TextEvent DataChangeEvent HTTPStatusEvent IMEEvent TimerEvent TweenEvent AutoLayoutEvent CaptionChangeEvent CaptionTargetEvent SoundEvent VideoEvent  SkinErrorEvent LayoutEvent VideoProgressEvent MetadataEvent IVPEvent KeyboardEvent FocusEvent FullScreenEvent AsyncErrorEvent FocusEvent KeyboardEvent NetStatusEvent StatusEvent SyncEvent DataGridEvent SliderEvent
+syn keyword actionScriptTodo	FIXME NOTE TODO OPTIMIZE XXX contained
+"TODO: May want to break this flixel stuff into a separate plugin somehow?
+syn keyword flixelClasses				DebugPathDisplay FlxAnim FlxBasic FlxButton FlxCamera FlxDebugger FlxEmitter FlxG FlxGame FlxGroup FlxList FlxObject FlxParticle FlxPath FlxPoint FlxPreloader FlxQuadTree FlxRect FlxReplay FlxSave FlxSound FlxSprite FlxState FlxText FlxTile FlxTileblock FlxTilemap FlxTilemapBuffer FlxTimer FlxU FlxWindow FrameRecord Input Keyboard Log Mouse MouseRecord Perf TimerManager VCR Vis Watch WatchEntry
 
 " catch errors caused by wrong parenthesis
 syn match   actionScriptInParen     contained "[{}]"
-syn region  actionScriptParen       transparent start="(" end=")" contains=actionScriptParen,actionScript.*
+syn region  actionScriptParen       transparent start="(" end=")" contains=actionScriptParen,actionScript.*,flixel.*
 syn match   actionScrParenError  ")"
 
 if main_syntax == "actionscript"
@@ -162,6 +165,8 @@ if version >= 508 || !exists("did_actionscript_syn_inits")
   HiLink as3Constants			Type
   HiLink as3Errors			Constant
   HiLink as3Events			Constant
+  HiLink actionScriptTodo		Todo
+  HiLink flixelClasses			Constant     " or should it be Type? or Operator?
   delcommand HiLink
 endif
 
