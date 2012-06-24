@@ -71,6 +71,10 @@ autocmd FileType python set shiftwidth=4  " 4 spaces in python files
 "autocmd FileType python set tabstop=2     " 2 spaces in python files
 "autocmd FileType python set shiftwidth=2  " 2 spaces in python files
 
+"xml
+"(via http://ku1ik.com/2011/09/08/formatting-xml-in-vim-with-indent-command.html)
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
 ""ruby
 "autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 "autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
