@@ -18,10 +18,12 @@
 
 
 # ~/bin                          = my addition for scripts
+# /usr/local/bin                 = for homebrew
 # $PATH                          = whatever the path may have been set to before this
 # /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin   = the flex sdk installed via homebrew
 
-PATH=~/bin:$PATH:/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin
+#PATH=~/bin:$PATH:/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin
+PATH=~/bin:/usr/local/bin:$PATH:/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin
 export PATH
 #NOTE: Later path declarations take lower precedence.
 
