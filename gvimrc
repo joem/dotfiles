@@ -6,11 +6,6 @@ if has("gui_macvim")
   set lines=77
   set columns=141 " Allows room for nerdtree to add its scrollbar into
 
-  " Command-T for CommandT
-  macmenu &File.New\ Tab key=<D-T>
-  map <D-t> :CommandT<CR>
-  imap <D-t> <Esc>:CommandT<CR>
-
   " Command-Return for fullscreen
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
