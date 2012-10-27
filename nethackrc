@@ -2,7 +2,8 @@
 # see http://nethack.wikia.com/wiki/Options for all possible options
 #
 #----------GAME ENVIRONMENT----------
-OPTIONS=color,hilite_pet,lit_corridor,DECgraphics
+#OPTIONS=color,hilite_pet,lit_corridor,DECgraphics
+OPTIONS=color,hilite_pet,lit_corridor,IBMgraphics
 #OPTIONS=color,hilite_pet,lit_corridor
 #OPTIONS=showexp,showscore,time
 OPTIONS=msg_window:r,disclose:+i+a+v+g+c
