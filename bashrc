@@ -58,11 +58,11 @@ alias llg='ll | grep $1'
 # tree with ANSI
 alias tree="tree -A"
 
-# this 'rmm' isn't working quite right- you have to say 'y' after everything.
-#alias rmm="~/bin/rm-to-trash.py"
-
 ## this 'trash' command was installed with osxutils
 #alias rmm="trash"
+
+# this rmtrash command was installed by homebrew
+alias trash='rmtrash'
 
 # fdc is oposite of cdf. it opens a finder window of the current terminal dir
 alias fdc="open ."
@@ -95,6 +95,27 @@ alias g=grep
 
 # alias to love
 alias love="/Applications/love.app/Contents/MacOS/love"
+
+
+# useful aliases to help with rails dev
+bundle_commands="rake spec rspec cucumber cap watchr rails rackup"
+
+function run_bundler_cmd () {
+  if [ -r ./Gemfile ]; then
+    bundle exec $@
+  else
+    $@
+  fi
+}
+
+for cmd in $bundle_commands
+do
+  alias $cmd="run_bundler_cmd $cmd"
+done
+
+# Old versions of some rails dev helper aliases:
+#alias bake="bundle exec rake"
+#alias be="bundle exec"
 
 
 ###########################
@@ -164,6 +185,13 @@ dec2hex() { printf '%x\n' $@ ; }
 #  . $HOME/bin/wcd.go
 #}
 
+# For quickly setting up my rails dev tools how I like:
+function dev-rails() {
+  mvim .
+  tmux \
+         new-session -s SessionName -n Windowname \; \
+         split-window -v -p 75 -t 1
+}
 
 
 ###############################
