@@ -770,9 +770,9 @@ Open Safari and google for something: >
 Open FILENAME in a new split and compare the current buffer to it: >
   :diffsplit FILENAME
 
-(diff mode) Jump forwards to the next start of a change: >
+(diff mode) Jump forwards to the next start of a change/diff: >
   ]c
-(diff mode) Jump backwards to the previous start of a change: >
+(diff mode) Jump backwards to the previous start of a change/diff: >
   [c
 
 (diff mode) get the change from the other buffer to this buffer: >
@@ -844,6 +844,28 @@ Omni (code) completion (INSERT MODE): >
   <C-X> <C-O>
 Dictionary completion (INSERT MODE): >
   <C-X> <C-K>
+Tags completion (ctags) (INSERT MODE): >
+  <CL-X> <CL-]>
+Vim command-line completion (INSERT MODE): >
+  <C-X> <C-V>
+Spelling suggestions completion (INSERT MODE): >
+  <C-X> <s>
+Cancel an in-progress completion (INSERT MODE): >
+  <C-E>
+More help with completions: >
+  :h ins-completion
+
+Enable autocomplpop's auto-popup completion (evenutally toggle it, I hope): >
+  ,aa
+Enable autocomplpop's auto-popup completion: >
+  :AcpEnable
+Disable autocomplpop's auto-popup completion: >
+  :AcpDisable
+Suspend autocomplpop's auto-popup completion temporarily: >
+  :AcpLock
+Resume autocomplpop's auto-popup completion suspended by :AcpLock: >
+  :AcpUnlock
+
 Pull current word onto search/command line: >
   /<C-R> <C-W>
 
@@ -944,19 +966,28 @@ See what's mapped to \ and what mapped it: >
 Change working directory to that of current file: >
   :cd %:p:h
 
-when in an html file, this sets the compiler: >
+when in an html file, this sets the compiler (then you can run :make on it): >
   :compiler tidy
-this "compiles" it with the compiler: >
-  :make
-this opens the quickfix window: >
+
+Compile using the makefile: >
+  :make <OPTIONS/TARGETS>
+Do a ":make run" without having to hit enter when you return: >
+  :silent make run
+Open the quickfix window (automatically opened by :make if errors encountered): >
   :copen
-this goes to the next quickfix item: >
+Go to the next quickfix item: >
   :cn
 
 Align things (table-like) based on the equals sign (visual mode) [|align|]: >
   :Align =
 Align things to equals sign, with no padding around equals sign (visual mode) [|align|]: >
   :Align! p0P0 =
+Make a left-justified alignment on character "x" where "x" is: ,:<=@|# : >
+  \tx
+Make a right-justified alignment on character "x" where "x" is: ,:<=@# : >
+  \Tx
+Like \tx but swaps whitespace on the right of the x to their left: >
+  \tsx
 
 INVALUABLE help resource when making vim scripts: >
   :help vim-script-intro
@@ -1022,6 +1053,60 @@ Convert markdown links in the current buffer to referenced markdown links: >
   :%! formd -r
 Convert markdown links in the current buffer to inline markdown links: >
   :%! formd -i
+
+In normal mode, go back into visual mode and select what was previously selected: >
+  gv
+
+XML/HTML encode  (&lt; &quot; &gt; etc) [|unimpaired|]: >
+  [xx
+< or [|unimpaired|]: >
+  {Visual}[x
+XML/HTML decode  (&lt; &quot; &gt; etc) [|unimpaired|]: >
+  ]xx
+< or [|unimpaired|]: >
+  {Visual}]x
+
+URL encode  (%20 %22 %3E etc) [|unimpaired|]: >
+  [uu
+< or [|unimpaired|]: >
+  {Visual}[u
+URL decode  (%20 %22 %3E etc) [|unimpaired|]: >
+  ]uu
+< or [|unimpaired|]: >
+  {Visual}]u
+
+C String encode  (\n \" \\ etc) [|unimpaired|]: >
+  [yy
+< or [|unimpaired|]: >
+  {Visual}[y
+C String decode  (\n \" \\ etc) [|unimpaired|]: >
+  ]yy
+< or [|unimpaired|]: >
+  {Visual}]y
+
+Base64 encode (Zm9vIGJhcg== etc) [|unimpaired|]: >
+  [YY
+< or [|unimpaired|]: >
+  {Visual}[Y
+Base64 decode (Input length must be a multiple of 4) [|unimpaired|]: >
+  ]YY
+< or [|unimpaired|]: >
+  {Visual}]Y
+
+Add [count] blank lines above the cursor [|unimpaired|]: >
+  [<Space>
+Add [count] blank lines below the cursor [|unimpaired|]: >
+  ]<Space>
+
+Move line [count] lines up [|unimpaired|]: >
+  [e
+Move line [count] lines down [|unimpaired|]: >
+  ]e
+
+Previous quickfix thing, same as |:cprevious| [|unimpaired|]: >
+  [q
+Next quickfix thing, same as |:cnext| [|unimpaired|]: >
+  ]q
 
 
 
@@ -1437,6 +1522,10 @@ zi      - toggle current fold (what's the difference?)
 
 (Idea: Temporarily ":map <LocalLeader>, @q" (or any macro letter) so that you can just press "," to repeat it.)
 (or: ":nnoremap <Space> @q")
+
+
+Create a new file in NERDTree [|NERDTree|]: >
+  <m> THEN <a> THEN <filename>
 
 
 ==============================================================================
