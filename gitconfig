@@ -65,3 +65,5 @@
 #   lg = log -p
 #   who = shortlog -s --
 
+[credential]
+	helper = osxkeychain
