@@ -78,7 +78,8 @@ set guioptions-=T
 " Default gui color scheme
 "colorscheme ir_black    " good
 "colorscheme candycode   " good
-colorscheme macvim      " best!
+"colorscheme macvim      " best!
+colorscheme tomorrow-night  "trying it out
 set bg=dark
 set cursorline          " show the cursor line (maybe its better to not do so?)
 " set cursorcolumn          " show the cursor column (maybe its better to not do so?)
@@ -230,7 +231,7 @@ endfunction
 call s:DefineCommand("cd", "ChangeDirectory")
 call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
-call s:DefineCommand("e", "Edit")
+"call s:DefineCommand("e", "Edit")
 call s:DefineCommand("mkdir", "Mkdir")
 
 """ Removed because this IS my local config!:
