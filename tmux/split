@@ -1,0 +1,12 @@
+#new-session  -s SessionName -n WindowName Command
+#new-session  -s SessionName -n WindowName
+#new-window -n WindowName Command
+#new-window -n WindowName
+#split-window -v -p 25 -t 1 Command
+#split-window -v -p 25 -t 1
+#selectw -t 1
+#selectw -t 1
+#selectp -t 0
+#selectp -t 1
+
+split-window -v -p 75 -t 1
