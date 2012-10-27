@@ -83,11 +83,25 @@ au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
-runtime ftplugin/man.vim	" lets you now do :Man COMMAND to get a manpage
+runtime ftplugin/man.vim  " lets you now do :Man COMMAND to get a manpage
+
+"colorscheme candycode   " .gvimrc uses a different colorscheme
+colorscheme tomorrow-night  " test running this, think i like it!
 
 set dictionary=/usr/share/dict/words " more words!
 
-colorscheme candycode   " .gvimrc uses a different colorscheme
+"" make omnicomplete complete from syntax if there's nothing else to use
+"if has("autocmd") && exists("+omnifunc")
+"  autocmd Filetype *
+"        \   if &omnifunc == "" |
+"        \           setlocal omnifunc=syntaxcomplete#Complete |
+"        \   endif
+"endif
+
+
+" autocomplpop options
+let g:acp_enableAtStartup = 0
+let g:acp_completeOption = '.,w,b'
 
 " Settings for taglist.vim
 let Tlist_Use_Right_Window=1      " always open on right side of screen
@@ -148,6 +162,7 @@ let g:NERDCustomDelimiters = {
         \ 'csound': { 'left': ';'},
         \ 'ck': { 'left': '//'}
     \ }
+
 
 " ---------------------------------------------------------------------------
 " statusline setup
@@ -246,6 +261,8 @@ nmap <LocalLeader>fc  :%foldclose!<cr>
 nmap <LocalLeader>tt :Tlist<cr>
 " ,nn will toggle NERDTree on and off
 nmap <LocalLeader>nn :NERDTreeToggle<cr>
+" ,aa will turn autocomplpop on (need to work on toggling, though)
+nmap <LocalLeader>aa :AcpEnable<cr>
 " If I forgot to sudo vim a file, do that with :w!!
 cmap w!! %!sudo tee > /dev/null %
 " use \rci to indent ruby cody with ruby-code-indenter
