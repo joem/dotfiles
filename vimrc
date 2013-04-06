@@ -87,6 +87,8 @@ runtime ftplugin/man.vim  " lets you now do :Man COMMAND to get a manpage
 
 "colorscheme candycode   " .gvimrc uses a different colorscheme
 colorscheme tomorrow-night  " test running this, think i like it!
+"Improve the todo coloring for 'tomorrow-night':
+hi Todo gui=NONE guifg=Black guibg=DeepSkyBlue1
 
 set dictionary=/usr/share/dict/words " more words!
 

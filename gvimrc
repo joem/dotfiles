@@ -78,6 +78,8 @@ colorscheme tomorrow-night  "trying it out
 set bg=dark
 set cursorline          " show the cursor line (maybe its better to not do so?)
 " set cursorcolumn          " show the cursor column (maybe its better to not do so?)
+"Improve the todo highlighting in 'tomorrow-night':
+hi Todo gui=NONE guifg=Black guibg=DeepSkyBlue1
 
 
 " ConqueTerm wrapper
