@@ -1049,9 +1049,9 @@ See a list of all digraphs: >
 See a searchable (help file) list of all digraphs: >
   :h digraph-table
 
-Convert markdown links in the current buffer to referenced markdown links: >
+Convert markdown links in the current buffer to [referenced][1] markdown links: >
   :%! formd -r
-Convert markdown links in the current buffer to inline markdown links: >
+Convert markdown links in the current buffer to [inline](http:...) markdown links: >
   :%! formd -i
 
 In normal mode, go back into visual mode and select what was previously selected: >
@@ -1526,6 +1526,12 @@ zi      - toggle current fold (what's the difference?)
 
 Create a new file in NERDTree [|NERDTree|]: >
   <m> THEN <a> THEN <filename>
+
+Find out what highlight group the word under the cursor belongs to: >
+  :echo synIDattr(synID(line("."),col("."),1),"name")
+
+See the settings for a highlight group:
+  :hi GROUPNAME
 
 
 ==============================================================================
