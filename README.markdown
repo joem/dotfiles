@@ -86,12 +86,13 @@ you'll be all up to date.
 
 1. $ cd your-submodule
 2. $ git checkout master
-3. hack, edit
-4. $ git commit -a -m "commit in submodule"
-5. $ git push
-6. $ cd ..
-7. $ git add your-submodule
-8. $ git commit -m "Updated submodule"
+3. $ git pull
+4. hack, edit
+5. $ git commit -a -m "commit in submodule"
+6. $ git push
+7. $ cd ..
+8. $ git add your-submodule
+9. $ git commit -m "Updated submodule"
 
 HOMEBREW
 --------
