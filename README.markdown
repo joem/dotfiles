@@ -80,6 +80,21 @@ you'll be all up to date.
 3. Run git rm --cached path\_to\_submodule (no trailing slash).
 4. Commit and delete the now untracked submodule files.
 
+### Editing a submodule and pushing it
+
+(ie. for my vim snippets or a plugin I wrote)
+
+1. $ cd your-submodule
+2. $ git checkout master
+3. hack, edit
+4. $ git commit -a -m "commit in submodule"
+5. $ git push
+6. $ cd ..
+7. $ git add your-submodule
+8. $ git commit -m "Updated submodule"
+
+
+
 HOMEBREW
 --------
 
