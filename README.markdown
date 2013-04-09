@@ -73,14 +73,14 @@ are new commits in that bundle (and that those are uncommited). So all you need
 to do is `git add` it like it's any other file, and then `git commit` and
 you'll be all up to date.
 
-### Removing a submodule
+### Removing a submodule [(source)][remove-submod]
 
 1. Delete the relevant line from the .gitmodules file.
 2. Delete the relevant section from .git/config.
 3. Run git rm --cached path\_to\_submodule (no trailing slash).
 4. Commit and delete the now untracked submodule files.
 
-### Editing a submodule and pushing it
+### Editing a submodule and pushing it [(source)][edit-submod]
 
 (ie. for my vim snippets or a plugin I wrote)
 
@@ -93,14 +93,11 @@ you'll be all up to date.
 7. $ git add your-submodule
 8. $ git commit -m "Updated submodule"
 
-
-
 HOMEBREW
 --------
 
 I use [homebrew][homebrew] to install all kinds of programs and things. Go to that page and install it using their instructions, as it really is simple and it works so much better if installed the way they want.
 
-[homebrew]: http://mxcl.github.com/homebrew/
 
 RUBY
 ----
@@ -109,8 +106,6 @@ I use [rbenv][rbenv]/[ruby-build][rubybuild] (installed via homebrew) to manage
 different ruby environments. The configuration for this is already in the
 appropriate dotfiles here.
 
-[rbenv]: https://github.com/sstephenson/rbenv
-[rubybuild]: https://github.com/sstephenson/ruby-build
 
 CREDITS
 -------
@@ -127,9 +122,11 @@ Whenever I felt something was particularly awesome, or if I felt I may need to
 reference it again one day, I added credits and/or links in the dotfiles
 themselves.
 
-
 [jsbun]: http://github.com/pangloss/vim-javascript.git
-[ap]: http://github.com/michaeldv/awesome_print
-[i_editor]: http://github.com/jberkel/interactive_editor
 [nelstromdotfiles]: https://github.com/nelstrom/dotfiles
+[edit-submod]: http://stackoverflow.com/questions/5814319/git-submodule-push/5814351#5814351
+[remove-submod]: http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule/1260982#1260982
+[homebrew]: http://mxcl.github.com/homebrew/
+[rbenv]: https://github.com/sstephenson/rbenv
+[rubybuild]: https://github.com/sstephenson/ruby-build
 
