@@ -35,6 +35,9 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true  # If untracked files (%)
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
+# For python's virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+
 ###########################
 ##        Aliases        ##
 ###########################
@@ -125,8 +128,8 @@ done
 # this command changes the working dir to the front-most window of the Finder
 cdf()
 {
-eval cd "`osascript -e 'tell app "Finder" to return the quoted form of the POSIX path of (target of window 1 as alias)' 2>/dev/null`"
-pwd
+  eval cd "`osascript -e 'tell app "Finder" to return the quoted form of the POSIX path of (target of window 1 as alias)' 2>/dev/null`"
+  pwd
 }
 
 ## this command uses bwana/safari as a manpage viewer
@@ -192,6 +195,12 @@ function dev-rails() {
          new-session -s SessionName -n Windowname \; \
          split-window -v -p 75 -t 1
 }
+
+function lsoctal {
+  #stat -f '%A %a %N' *
+  ls -l "$@"| sed -e 's/--x/1/g' -e 's/-w-/2/g' -e 's/-wx/3/g' -e 's/r--/4/g' -e 's/r-x/5/g' -e 's/rw-/6/g' -e 's/rwx/7/g' -e 's/---/0/g'
+}
+
 
 
 ###############################
