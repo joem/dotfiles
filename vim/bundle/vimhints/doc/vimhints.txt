@@ -491,6 +491,37 @@ Turn spell check off: >
 Toggle spell check (my mapping): >
   ,ss
 
+Next spellcheck mistake: >
+  ]s
+Previous spellcheck mistake: >
+  [s
+Suggest words for current spellcheck mistake: >
+  z=
+Switch word for first suggestion -- like "i'm feeling lucky" spellcheck: >
+  1z=
+
+Add word to permanent spellcheck whitelist: >
+  zg
+Add word to temporary spellcheck whitelist -- lost when buffer closes: >
+  zG
+
+Add word to spellfile as a bad spellcheck word: >
+  zw
+
+Undo classifying a word a bad spellcheck word: >
+  zuw
+Undo classifying a word a good spellcheck word: >
+  zug
+Strip all commented lines out of spellfile (in case there are too many): >
+  :runtime spell/cleanadd.vim
+
+Set the spellcheck language to an appropriate region: >
+  :set spelllang=en
+  :set spelllang=en_us
+  :set spelllang=en_gb
+
+
+
 Remove empty lines: >
   :%s/^\n//
 
@@ -1176,18 +1207,6 @@ You'll get a postscript output of the file you're currently editing.
 From there you can view the postscript file with gv or convert it to a pdf
 with ps2pdf.
 
-
-when spellcheck is enabled:
-navigation:
-  ]s - next misspelled word
-  [s - prev "
-interaction:
-  zg - add misspelled word to system dictionary
-  zG - add misspelled word to buffer-local set of "good" words
-  zw - add word to 'bad' list
-  zW - add word to buffer-local 'bad' list
-  z= - view a numbered list of suggested spellings from which to choose for
-auto-replacement
 
 You may have noticed that pasting outside text into Vim from insert mode can
 lead to awkwardly stair-stepped text. You may also know that this is easily
