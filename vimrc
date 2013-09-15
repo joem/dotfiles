@@ -237,7 +237,8 @@ set history=200
 "" spelling...
 if v:version >= 700
   "use english for spellchecking
-  setlocal spelllang=en
+  "setlocal spelllang=en
+  setlocal spelllang=en_us
   "use ,ss to toggle spellchecking on/off
   nmap <LocalLeader>ss :set spell! spell?<CR>
   "don't spellcheck by default
