@@ -280,3 +280,6 @@ test -n "$PS1" && prompt_bw
 #set -o vi
 
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
