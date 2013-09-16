@@ -165,9 +165,16 @@ let g:NERDCustomDelimiters = {
         \ 'ck': { 'left': '//'}
     \ }
 
+" Settings for airline
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_theme='powerlineish'
+set ttimeoutlen=50
+
 
 " ---------------------------------------------------------------------------
 " statusline setup
+" (this is currently overridden with airline, so this is just in case)
 hi User1 ctermbg=green ctermfg=red   guibg=green guifg=red
 hi User2 ctermbg=red   ctermfg=blue  guibg=red   guifg=blue
 hi User3 ctermbg=blue  ctermfg=green guibg=blue  guifg=green
@@ -221,7 +228,7 @@ set diffopt+=vertical         " make :diffsplit default to vertical
 "  mouse stuffs
 set mouse=a                   " mouse support in all modes
 set mousehide                 " hide the mouse when typing
-" this makes the mouse paste a block of text without formatting it 
+" this makes the mouse paste a block of text without formatting it
 " (good for code)
 map <MouseMiddle> <esc>"*p
 
@@ -305,7 +312,7 @@ nnoremap <s-space> <PageUp>
 " ---------------------------------------------------------------------------
 " setup for the visual environment
 if $TERM =~ '^xterm'
-        "set t_Co=16   " changed from 256 
+        "set t_Co=16   " changed from 256
         set t_Co=256
 elseif $TERM =~ '^screen-bce'
         set t_Co=256            " just guessing
