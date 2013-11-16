@@ -10,7 +10,7 @@ p, P            - paste after/before, respectively
 <tab>           - for snippets (INSERT MODE) (see :h snipMate)
 <C-X><C-...>    - for completions (INSERT MODE) (see completion below)
 
-,tt     - toggle Taglist
+,tt     - toggle Tagbar
 ,nn     - toggle NerdTree explorer
 ,ss     - toggle spell-check
 ,ww     - toggle line-wrap
@@ -341,7 +341,7 @@ Start a game of tetris (plugin): >
 Run ruby-code-indenter on current buffer: >
   \rci
 
-Start taglist [|taglist.txt|]: >
+Start tagbar [|tagbar.txt|]: >
   ,tt
 
 Start nerdtree [|NERDTree|]: >

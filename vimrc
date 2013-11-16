@@ -210,18 +210,6 @@ set dictionary=/usr/share/dict/words " more words!
 let g:acp_enableAtStartup = 0
 let g:acp_completeOption = '.,w,b'
 
-"" Settings for taglist.vim
-"let Tlist_Use_Right_Window=1      " always open on right side of screen
-"let Tlist_Auto_Open=0
-"let Tlist_Enable_Fold_Column=0
-"let Tlist_Compact_Format=0
-"let Tlist_WinWidth=28             " width of taglist
-"let Tlist_Exit_OnlyWindow=1
-"let Tlist_File_Fold_Auto_Close = 1
-"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-"" actionscript language
-"let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
-
 " Settings for tagbar
 let g:tagbar_width = 28
 let g:tagbar_expand = 1
@@ -372,8 +360,6 @@ nmap <LocalLeader>lcd :lcd%:p:h<cr>
 nmap <LocalLeader>fo  :%foldopen!<cr>
 " close all folds
 nmap <LocalLeader>fc  :%foldclose!<cr>
-"" ,tt will toggle taglist on and off
-"nmap <LocalLeader>tt :Tlist<cr>
 " ,tt will toggle tagbar on and off
 nmap <LocalLeader>tt :TagbarToggle<cr>
 " ,nn will toggle NERDTree on and off
