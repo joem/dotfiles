@@ -964,9 +964,6 @@ underline current line with - for a Markdown header: >
 underline current line with = for a Markdown header: >
   ,u=
 
-Beautify/prettify a javascript file: >
-  \ff
-
 Select a code block based on current indentation level: >
   vii
 Select code block based on current indentation level & get the line above: >
