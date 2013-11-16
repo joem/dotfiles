@@ -35,8 +35,8 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true  # If untracked files (%)
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
-# For python's virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+## For python's virtualenvwrapper
+#source /usr/local/bin/virtualenvwrapper.sh
 
 ###########################
 ##        Aliases        ##
