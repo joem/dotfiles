@@ -206,10 +206,6 @@ set dictionary=/usr/share/dict/words " more words!
 "endif
 
 
-" autocomplpop options
-let g:acp_enableAtStartup = 0
-let g:acp_completeOption = '.,w,b'
-
 " Settings for tagbar
 let g:tagbar_width = 28
 let g:tagbar_expand = 1
@@ -364,8 +360,6 @@ nmap <LocalLeader>fc  :%foldclose!<cr>
 nmap <LocalLeader>tt :TagbarToggle<cr>
 " ,nn will toggle NERDTree on and off
 nmap <LocalLeader>nn :NERDTreeToggle<cr>
-" ,aa will turn autocomplpop on (need to work on toggling, though)
-nmap <LocalLeader>aa :AcpEnable<cr>
 " If I forgot to sudo vim a file, do that with :w!!
 cmap w!! %!sudo tee > /dev/null %
 " use \rci to indent ruby cody with ruby-code-indenter

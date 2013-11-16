@@ -886,17 +886,6 @@ Cancel an in-progress completion (INSERT MODE): >
 More help with completions: >
   :h ins-completion
 
-Enable autocomplpop's auto-popup completion (evenutally toggle it, I hope): >
-  ,aa
-Enable autocomplpop's auto-popup completion: >
-  :AcpEnable
-Disable autocomplpop's auto-popup completion: >
-  :AcpDisable
-Suspend autocomplpop's auto-popup completion temporarily: >
-  :AcpLock
-Resume autocomplpop's auto-popup completion suspended by :AcpLock: >
-  :AcpUnlock
-
 Pull current word onto search/command line: >
   /<C-R> <C-W>
 
