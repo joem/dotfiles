@@ -99,6 +99,9 @@ alias g=grep
 # alias to love
 alias love="/Applications/love.app/Contents/MacOS/love"
 
+# Alias for cd'ing to the root dir of the current git repo
+alias git-root='cd $(git rev-parse --show-toplevel)'
+
 
 # useful aliases to help with rails dev
 bundle_commands="rake spec rspec cucumber cap watchr rails rackup"
