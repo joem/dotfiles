@@ -953,12 +953,6 @@ underline current line with - for a Markdown header: >
 underline current line with = for a Markdown header: >
   ,u=
 
-Select a code block based on current indentation level: >
-  vii
-Select code block based on current indentation level & get the line above: >
-  vai
-(Use 'ai' and 'ii' anywhere you'd use another text object, like 'iw')
-
 Time the start up of Vim with a breakdown of what takes how long (from command
 line!): >
   vim --startuptime TIMEOUTPUT.txt INPUT.EXT
