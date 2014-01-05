@@ -6,6 +6,9 @@ if has("gui_macvim")
   set lines=77
   set columns=141 " Allows room for nerdtree to add its scrollbar into
 
+  " Disable beeping and flashing for all errors
+  set vb t_vb=
+
   " Command-Return for fullscreen
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
