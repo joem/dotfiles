@@ -133,6 +133,11 @@
   "improve autocomplete menu color
   highlight Pmenu ctermbg=238 gui=bold
 
+  " Make the 81st column stand out
+  highlight ColorColumn ctermbg=magenta
+  call matchadd('ColorColumn', '\%81v', 100)
+
+
   " ---------------------------------------------------------------------------
   " statusline setup
   " (this is currently overridden with airline, so this is just in case)
