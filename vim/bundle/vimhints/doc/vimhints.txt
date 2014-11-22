@@ -1529,8 +1529,12 @@ Create a new file in NERDTree [|NERDTree|]: >
 Find out what highlight group the word under the cursor belongs to: >
   :echo synIDattr(synID(line("."),col("."),1),"name")
 
-See the settings for a highlight group:
+See the settings for a highlight group: >
   :hi GROUPNAME
+
+See a list of most recently used files, with option to select one: >
+  :browse oldfiles
+
 
 
 ==============================================================================
