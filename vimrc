@@ -1,5 +1,9 @@
 " vim: set tabstop=2 shiftwidth=2 et fdm=marker:
 
+" Hint: To toggle a fold, use:   za
+"       To open all folds, use:  ,fo
+"       To close all folds, use: ,fc
+
 " Environment ---------------{{{
 
   " Basics
@@ -107,6 +111,22 @@
   "        \           setlocal omnifunc=syntaxcomplete#Complete |
   "        \   endif
   "endif
+
+  "  mouse stuffs
+  set mouse=a                   " mouse support in all modes
+  set mousehide                 " hide the mouse when typing
+
+  " ---------------------------------------------------------------------------
+  "  spelling...
+  if v:version >= 700
+    "use english for spellchecking
+    "setlocal spelllang=en
+    setlocal spelllang=en_us
+    "use ,ss to toggle spellchecking on/off
+    nmap <LocalLeader>ss :set spell! spell?<CR>
+    "don't spellcheck by default
+    set nospell
+  endif
 
   " ---------------------------------------------------------------------------
   "  searching and diffs
@@ -376,25 +396,6 @@
 " Functions ---------------{{{
 
 " }}}
-
-
-
-" ---------------------------------------------------------------------------
-"  mouse stuffs
-set mouse=a                   " mouse support in all modes
-set mousehide                 " hide the mouse when typing
-
-" ---------------------------------------------------------------------------
-"" spelling...
-if v:version >= 700
-  "use english for spellchecking
-  "setlocal spelllang=en
-  setlocal spelllang=en_us
-  "use ,ss to toggle spellchecking on/off
-  nmap <LocalLeader>ss :set spell! spell?<CR>
-  "don't spellcheck by default
-  set nospell
-endif
 
 
 
