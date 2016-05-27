@@ -4,9 +4,6 @@
 [submodule "vim/bundle/vim-git"]
 	path = vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
-[submodule "vim/bundle/repeat"]
-	path = vim/bundle/repeat
-	url = https://github.com/tpope/vim-repeat.git
 [submodule "vim/bundle/securemodelines"]
 	path = vim/bundle/securemodelines
 	url = https://github.com/ciaranm/securemodelines.git
