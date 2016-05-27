@@ -228,10 +228,10 @@
   nmap <LocalLeader>fo  :%foldopen!<cr>
   " close all folds
   nmap <LocalLeader>fc  :%foldclose!<cr>
-  " ,tt will toggle tagbar on and off
-  nmap <LocalLeader>tt :TagbarToggle<cr>
-  " ,nn will toggle NERDTree on and off
-  nmap <LocalLeader>nn :NERDTreeToggle<cr>
+  "" ,tt will toggle tagbar on and off
+  "nmap <LocalLeader>tt :TagbarToggle<cr>
+  "" ,nn will toggle NERDTree on and off
+  "nmap <LocalLeader>nn :NERDTreeToggle<cr>
   " If I forgot to sudo vim a file, do that with :w!!
   cmap w!! %!sudo tee > /dev/null %
   " use \rci to indent ruby cody with ruby-code-indenter
