@@ -7,4 +7,7 @@ Fugitive
 https://github.com/tpope/vim-fugitive.git
 Lets you do most git commands easily from inside Vim.
 
+vinegar
+https://github.com/tpope/vim-vinegar
+Some nice changes to netrw so that it's a wonderful file browser
 
