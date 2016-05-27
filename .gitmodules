@@ -25,9 +25,6 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim
-[submodule "vim/bundle/unimpaired"]
-	path = vim/bundle/unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "vim/bundle/airline"]
 	path = vim/bundle/airline
 	url = https://github.com/bling/vim-airline.git
