@@ -5,12 +5,7 @@ First clone this repo:
 
     git clone git://github.com/joem/dotfiles.git ~/.dotfiles
 
-Where possible, Vim plugins are installed as git submodules. Check these out by
-running the commands:
-
-    cd .dotfiles
-    git submodule init
-    git submodule update
+Where possible, Vim plugins are installed as git repos into vim/bundle via simple `git clone` commands. See vimbundles.txt for a list of which repos I'm using. You'll have to add them manually yourself.
 
 Create symlinks:
 
@@ -42,57 +37,21 @@ My preferences for Vim are stored in `.dotfiles/vimrc` and `.dotfiles/gvimrc`
 respectively. All plugins and scripts are stored in the `.dotfiles/vim`
 directory.
 
-### Adding a plugin bundle via submodule
+### Adding a plugin bundle from a git repo
 
-Plugins that are published on github can be installed as submodules. For
-example, to install the [JavaScript bundle][jsbun], follow these steps:
+Be sure to `git clone` the plugin into vim/bundle and be sure to update vimbundles.txt so you can keep track of what came from where and what it is. The vim/bundle directory is untracked, so installing things there is not a problem.
 
-    cd ~/.dotfiles
-    git submodule add http://github.com/pangloss/vim-javascript.git vim/bundle/vim-javascript
+### Adding a plugin bundle that isn't from a git repo
 
-This will update the `.gitmodules` file by appending something like:
+If you want to install a non-git bundle and you don't want to check the bundle itself into this dotfiles repo, then just put the bundle into vim/bundle and write a note in vimbundles.txt.
 
-    [submodule "vim/bundle/vim-javascript"]
-        path = vim/bundle/vim-javascript
-        url = http://github.com/pangloss/vim-javascript.git
+Otherwise, if you do want to check the non-git bundle in, you'll need to put it in another path (I suggest vim/bundle-checkin). Then you'll need to adjust your vimrc to have a line like this:
+  execute pathogen#infect('bundle/{}', '~/src/vim/bundle/{}')
 
-As well as checkout out the git repo into the
-`vim/bundle/vim-javascript` directory. You can then commit these changes
-as follows:
+### Removing a bundle
 
-    git add .
-    git ci -m "Add the javascript bundle"
+Easy... Just delete the bundle's directory from the appropriate bundly folder, and you're done. You might want to note it in vimbundles.txt too.
 
-### Updating a submodule
-
-Simple. Just `cd` to that submodule's directory and run `git pull` to update
-it.
-
-Now, when you're back in the parent repo, a `git status` will tell you there
-are new commits in that bundle (and that those are uncommited). So all you need
-to do is `git add` it like it's any other file, and then `git commit` and
-you'll be all up to date.
-
-### Removing a submodule [(source)][remove-submod]
-
-1. Delete the relevant line from the .gitmodules file.
-2. Delete the relevant section from .git/config.
-3. Run git rm --cached path\_to\_submodule (no trailing slash).
-4. Commit and delete the now untracked submodule files.
-
-### Editing a submodule and pushing it [(source)][edit-submod]
-
-(ie. for my vim snippets or a plugin I wrote)
-
-1. $ cd your-submodule
-2. $ git checkout master
-3. $ git pull
-4. hack, edit
-5. $ git commit -a -m "commit in submodule"
-6. $ git push
-7. $ cd ..
-8. $ git add your-submodule
-9. $ git commit -m "Updated submodule"
 
 HOMEBREW
 --------
@@ -123,10 +82,7 @@ Whenever I felt something was particularly awesome, or if I felt I may need to
 reference it again one day, I added credits and/or links in the dotfiles
 themselves.
 
-[jsbun]: http://github.com/pangloss/vim-javascript.git
 [nelstromdotfiles]: https://github.com/nelstrom/dotfiles
-[edit-submod]: http://stackoverflow.com/questions/5814319/git-submodule-push/5814351#5814351
-[remove-submod]: http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule/1260982#1260982
 [homebrew]: http://mxcl.github.com/homebrew/
 [rbenv]: https://github.com/sstephenson/rbenv
 [rubybuild]: https://github.com/sstephenson/ruby-build
