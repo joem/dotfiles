@@ -25,7 +25,7 @@
 
   " ---------------------------------------------------------------------------
   " load the pathogen bundle
-  runtime bundle/pathogen/autoload/pathogen.vim
+  runtime bundle/vim-pathogen/autoload/pathogen.vim
   " make pathogen load all bundles (plugins):
   call pathogen#infect()
 
