@@ -1,0 +1,10 @@
+
+Pathogen
+https://github.com/tpope/vim-pathogen.git
+Manages the runtime path, makes it easy to load all plugins in separate directories under .vim/bundle/
+
+Fugitive
+https://github.com/tpope/vim-fugitive.git
+Lets you do most git commands easily from inside Vim.
+
+
