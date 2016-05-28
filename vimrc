@@ -19,10 +19,6 @@
   "  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
   "endif
 
-  " first the disabled features due to security concerns
-  let g:secure_modelines_verbose=0 " securemodelines vimscript
-  let g:secure_modelines_modelines = 15 " 15 available modelines
-
   " ---------------------------------------------------------------------------
   " load the pathogen bundle
   runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -80,7 +76,8 @@
   set hidden                    " hide buffers when not displayed
   set noautowrite               " don't automagically write on :next
   set lazyredraw                " don't redraw when don't have to
-  set modelines=0               " no modelines [http://www.guninski.com/vim1.html]
+  set modeline                  " enable modelines, they're safe enough now
+  set modelines=5               " enable modelines, they're safe enough now
   set scrolloff=5               " keep at least 5 lines above/below
   set sidescrolloff=5           " keep at least 5 lines left/right
   set backspace=indent,eol,start  " allow backspacing over everything in insert mode
