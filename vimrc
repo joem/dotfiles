@@ -300,47 +300,11 @@
 
 " Plugins ---------------{{{
 
-  " Settings for tagbar
-  let g:tagbar_width = 28
-  let g:tagbar_expand = 1
-  let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-  " actionscript language
-  let g:tagbar_type_actionscript = {
-        \   'ctagstype' : 'actionscript',
-        \   'kinds'     : [ 'c:class', 'f:method', 'p:property', 'v:variable' ]
-        \ }
 
   " Settings for :TOhtml
   let html_number_lines=1
   let html_use_css=1
   let use_xhtml=1
-
-  "" DISABLED BECAUSE ITS NOT INSTALLED!
-  "" Settings for HTML.vim
-  "let g:no_html_toolbar = 'yes'      " get rid of the graphic toolbar
-  "let g:do_xhtml_mappings = 'yes'    " sets it to xhtml mode by default
-  ""let g:no_html_map_override = 'yes' " don't override any previous mappings
-  "let g:html_tag_case = 'lowercase'  " lowercase html tags
-  ""let g:no_html_maps = '^.*$'        " don't do any mappings (disables menus!)
-  ""let g:no_html_tab_mapping = 'yes'  " don't remap the tab key
-  ""let g:html_default_charset = 'text/html; charset=UTF-8'  " force this charset
-
-  " Settings for Align
-  let g:DrChipTopLvlMenu= "Plugin."   "put its menu in plugin submenu
-
-  "" Settings for VimWiki
-  "let g:vimwiki_menu= 'Plugin'        " put its menu in plugin submenu
-  "let g:vimwiki_folding=0             " turn off autofolding for vimwiki
-  "" change path of vimwiki files:
-  "let g:vimwiki_list = [{'path': '~/.vimwiki/', 'path_html': '~/.vimwiki_html/'}]
-  "
-  "" Settings for VimClojure
-  "let g:clj_highlight_builtins=1      " highlight Clojure's builtins
-  "let g:clj_paren_rainbow=1           " rainbow parentheses'!
-
-  " Settings for SnipMate
-  let g:snips_author= 'joem <sod@llawn.com>'
-  let g:snippets_dir= '~/.vim/bundle/my_snipmate_snippets/snippets'
 
   " Settings for NERD_commenter
   let g:NERDCustomDelimiters = {
@@ -379,6 +343,10 @@
   let g:netrw_http_xcmd= "-source >"
   " NOTE: the following will work if you have wget, won't otherwise
   "let g:netrw_http_cmd = "wget -q -O"
+
+  " Settings for netrw/vinegar
+  " let escape return you to previous buffer:
+  autocmd FileType netrw nmap <buffer> <esc> <C-^>
 
 " }}}
 
