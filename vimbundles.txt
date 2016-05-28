@@ -1,7 +1,7 @@
 
 vim-pathogen
 https://github.com/tpope/vim-pathogen.git
-Manages the runtime path, makes it easy to load all plugins in separate directories under .vim/bundle/
+Manages the runtime path, load plugins from directories under .vim/bundle/
 
 vim-fugitive
 https://github.com/tpope/vim-fugitive.git
@@ -17,10 +17,13 @@ a quick and light commenting plugin
 
 vim-hints_syntax
 https://github.com/joem/vim-hints_syntax.git
-syntax highlighting for my hints files
+syntax highlighting for my general hints files
 
 vim-airline
 https://github.com/vim-airline/vim-airline
 a nice status line
 
+vim-vimhints
+https://github.com/joem/vim-vimhints
+my vim hints file, eventually it'll be a bit more featureful
 
