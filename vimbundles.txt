@@ -1,22 +1,26 @@
 
-pathogen
+vim-pathogen
 https://github.com/tpope/vim-pathogen.git
 Manages the runtime path, makes it easy to load all plugins in separate directories under .vim/bundle/
 
-fugitive
+vim-fugitive
 https://github.com/tpope/vim-fugitive.git
 Lets you do most git commands easily from inside Vim.
 
-vinegar
+vim-vinegar
 https://github.com/tpope/vim-vinegar
 Some nice changes to netrw so that it's a wonderful file browser
 
-commentary
+vim-commentary
 https://github.com/tpope/vim-commentary
 a quick and light commenting plugin
 
 vim-hints_syntax
 https://github.com/joem/vim-hints_syntax.git
 syntax highlighting for my hints files
+
+vim-airline
+https://github.com/vim-airline/vim-airline
+a nice status line
 
 
