@@ -217,27 +217,14 @@
   map! <F1> <Esc>
   " make Y consistent with C and D (Y yanks from cursor to $)
   map Y y$
-  " change directory to that of current file
-  nmap <LocalLeader>cd :cd%:p:h<cr>
-  " change local directory to that of current file
-  nmap <LocalLeader>lcd :lcd%:p:h<cr>
   " open all folds
   nmap <LocalLeader>fo  :%foldopen!<cr>
   " close all folds
   nmap <LocalLeader>fc  :%foldclose!<cr>
-  " If I forgot to sudo vim a file, do that with :w!!
-  cmap w!! %!sudo tee > /dev/null %
-  " use \rci to indent ruby cody with ruby-code-indenter
-  nmap <Leader>rci :%!ruby-code-indenter<cr>
   " use ,ww to toggle line wrapping
   nmap <LocalLeader>ww :set wrap! wrap?<cr>
   " ,hh will turn search highlighting off temporarily
   nmap <LocalLeader>hh :noh<cr>
-  " ,pp will try to draw a preview of whatever file is currently in your buffer
-  map <LocalLeader>pp :Hammer<CR>
-  " toggle comments
-  nnoremap <silent> gcc :call NERDComment(0, "toggle")<cr>
-  vnoremap <silent> gc <ESC>:call NERDComment(1, "toggle")<cr>
   " Search mappings: These will make it so that going to the next one in a
   " search will center on the line it's found in.
   map N Nzz
@@ -302,12 +289,6 @@
   let html_number_lines=1
   let html_use_css=1
   let use_xhtml=1
-
-  " Settings for NERD_commenter
-  let g:NERDCustomDelimiters = {
-          \ 'csound': { 'left': ';'},
-          \ 'ck': { 'left': '//'}
-      \ }
 
   " Settings for airline
   let g:airline_left_sep = ''
