@@ -15,3 +15,8 @@ commentary
 https://github.com/tpope/vim-commentary
 a quick and light commenting plugin
 
+vim-hints_syntax
+https://github.com/joem/vim-hints_syntax.git
+syntax highlighting for my hints files
+
+
