@@ -1,13 +1,17 @@
 
-Pathogen
+pathogen
 https://github.com/tpope/vim-pathogen.git
 Manages the runtime path, makes it easy to load all plugins in separate directories under .vim/bundle/
 
-Fugitive
+fugitive
 https://github.com/tpope/vim-fugitive.git
 Lets you do most git commands easily from inside Vim.
 
 vinegar
 https://github.com/tpope/vim-vinegar
 Some nice changes to netrw so that it's a wonderful file browser
+
+commentary
+https://github.com/tpope/vim-commentary
+a quick and light commenting plugin
 
