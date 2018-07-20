@@ -277,6 +277,8 @@
   "autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   "autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
   "autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+  " Stop the mouseover balloons
+  autocmd FileType ruby,eruby setlocal balloonexpr=
 
   runtime ftplugin/man.vim  " lets you now do :Man COMMAND to get a manpage
 

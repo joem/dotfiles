@@ -34,6 +34,9 @@ export LS_COLORS='no=00:fi=00:di=34:ln=35:pi=33:so=32:bd=34;46:cd=34;43:ex=31:su
 export GIT_PS1_SHOWDIRTYSTATE=true      # If unstaged (*), if staged (+)
 export GIT_PS1_SHOWUNTRACKEDFILES=true  # If untracked files (%)
 
+# export github access token for homebrew (that file has the export command too)
+if [ -f ~/.homebrew_github_personal_access_token ]; then . ~/.homebrew_github_personal_access_token ; fi
+
 # If I start to type something and press up it will search my history and jump to the first match.
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
