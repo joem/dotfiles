@@ -324,9 +324,10 @@
   " NOTE: the following will work if you have wget, won't otherwise
   "let g:netrw_http_cmd = "wget -q -O"
 
-  " Settings for netrw/vinegar
-  " let escape return you to previous buffer:
-  autocmd FileType netrw nmap <buffer> <esc> <C-^>
+  " the following doesn't work right in terminal, but works ok in macvim:
+  " " Settings for netrw/vinegar
+  " " let escape return you to previous buffer:
+  " autocmd FileType netrw nmap <buffer> <esc> <C-^>
 
 " }}}
 
