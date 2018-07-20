@@ -23,7 +23,7 @@
   " load the pathogen bundle
   runtime bundle/vim-pathogen/autoload/pathogen.vim
   " make pathogen load all bundles (plugins):
-  call pathogen#infect()
+  execute pathogen#infect()
 
   " ---------------------------------------------------------------------------
   "  backup options
