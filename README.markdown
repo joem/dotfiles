@@ -56,6 +56,17 @@ in another path (I suggest vim/bundle-checkin). Then you'll need to adjust your
 vimrc to have a line like
 `execute pathogen#infect('bundle/{}', '~/src/vim/bundle/{}')`
 
+### Undating  a plugin bundle from a git repo
+
+To update, `cd` into the bundle's directory and then `git pull`. If you'd
+prefer to see what's going to change before doing the pull, use `git fetch &&
+git log ..origin/master`, and after you're happy, you can then do `git pull` to
+make the update happen.
+
+### Updating a plugin bundle that isn't from a git repo
+
+Simply replace the file(s) or directory with the newer version.
+
 ### Removing a bundle
 
 Easy... Just delete the bundle's directory from the appropriate bundly folder,
