@@ -27,3 +27,7 @@ vim-vimhints
 https://github.com/joem/vim-vimhints
 my vim hints file, eventually it'll be a bit more featureful
 
+rainbow
+https://github.com/luochen1990/rainbow.git
+make parentheses be rainbow colored for quicker visual matching
+

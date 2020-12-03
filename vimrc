@@ -332,6 +332,9 @@
   " " let escape return you to previous buffer:
   " autocmd FileType netrw nmap <buffer> <esc> <C-^>
 
+  " Setting for rainbow parantheses
+  let g:rainbow_active = 0 "set to 0 if you want to enable it later via :RainbowToggle
+
 " }}}
 
 " GUI Settings ---------------{{{
