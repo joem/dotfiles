@@ -280,6 +280,9 @@
   " Stop the mouseover balloons
   autocmd FileType ruby,eruby setlocal balloonexpr=
 
+  " KiCad s-expression format files
+  au BufNewFile,BufRead *.kicad_mod,*.kicad_pcb setlocal filetype=lisp
+
   runtime ftplugin/man.vim  " lets you now do :Man COMMAND to get a manpage
 
 " }}}
