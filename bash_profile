@@ -13,13 +13,17 @@
 # ------ Set some settings --------------------------------
 
 # Note: Always finalize path before doing other things, please.
-# Note: Later path declarations take lower precedence.
+# Note: Later path declarations take lower precedence. (But note below I'm prepending existing path, so the highest priority path is the last one prepended.)
 
 #PATH=~/bin:$PATH:/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin
 #PATH=~/bin:/usr/local/bin:$PATH:/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin
+PATH=~/Programming/go/bin:$PATH
 PATH=~/bin:$PATH
+PATH=/usr/local/sbin:$PATH
 export PATH
 
+GOPATH=~/Programming/go
+export GOPATH
 
 #TODO: Should I move ALL the settings except path to .bashrc??
 
