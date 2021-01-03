@@ -37,6 +37,9 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true  # If untracked files (%)
 # export github access token for homebrew (that file has the export command too)
 if [ -f ~/.homebrew_github_personal_access_token ]; then . ~/.homebrew_github_personal_access_token ; fi
 
+# Set the location of the Brewfile (can also do it manually with --file when running brew bundle)
+export HOMEBREW_BUNDLE_FILE="~/.dotfiles/Brewfile"
+
 # If I start to type something and press up it will search my history and jump to the first match.
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
