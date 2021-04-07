@@ -1,0 +1,38 @@
+#
+# This is Git's config file.
+# (comments begin with either ";" or "#")
+#
+
+[user]
+  name = Joe Miragliuolo
+  email = sod@llawn.com
+
+[apply]
+  whitespace = nowarn
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[color "diff"]
+ meta = yellow bold
+ frag = magenta bold
+ old = red bold
+ new = green bold
+
+[core]
+  excludesfile = ~/.gitignore
+
+#[instaweb]
+#  httpd=webrick
+#  port=8000       ; change the port from default 1234
+
+[alias]
+  st = status
+  s = status --short
+  lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  vimdiff=difftool --tool=vimdiff --no-prompt
+  opendiff=difftool --tool=opendiff --no-prompt
+
+#[credential]
+#  helper = osxkeychain
