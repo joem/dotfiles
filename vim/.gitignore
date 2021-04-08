@@ -1,0 +1,6 @@
+# By default, vim stores .netrwhist in the .vim directory, which I symlink to
+# this directory. In order to not need to worry about git wanting to add
+# .netrwhist to this repo, we gitignore it like so:
+
+/.netrwhist
+

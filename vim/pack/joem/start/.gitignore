@@ -1,0 +1,8 @@
+# Since plugins will be added in subfolders to this directory, we should ignore everything at this level or deeper so it won't be checked into this repo.
+
+/*
+
+# But let's not ignore this .gitignore file. Besides being the file that tells git to ignore all the plugins, it acts as a way for git to build out the empty directory structure to this directory when cloning the repo.
+
+!/.gitignore
+
