@@ -31,6 +31,7 @@
   " Note: In the above directory lists, they're set so you can make a
   " ./.vimbackup dir to clean up a dir, or make a ~/.vimbackup dir to clean up
   " all dirs. The double / at the end reduces collisions when using a dir.
+  " The tmp options are for cases where nowhere else is writeable.
 
   " Use :h 'viminfo' (with the quotes!) to see full explanations and
   " more options
