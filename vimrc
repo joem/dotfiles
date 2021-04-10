@@ -165,6 +165,8 @@
     let g:solarized_termcolors=256
   endif
   set background=dark
+  " Disable the GUI Solarized menu, but might as well put it here:
+  let g:solarized_menu=0
   colorscheme solarized
 
   " Disable beeping and flashing for all errors
