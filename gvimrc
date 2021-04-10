@@ -44,11 +44,12 @@ endif
 " Start without the toolbar
 set guioptions-=T
 
-" Default gui color scheme
-"colorscheme ir_black    " good
-"colorscheme candycode   " good
-colorscheme macvim      " best!
-"colorscheme tomorrow-night  "trying it out
+" " Default gui color scheme
+" " Don't set one here anymore since I set solarized in vimrc!
+" colorscheme macvim      " good
+" colorscheme ir_black    " ok
+" colorscheme candycode   " ok
+" colorscheme tomorrow-night " ok?
 set bg=dark
 set cursorline          " show the cursor line (maybe its better to not do so?)
 " set cursorcolumn          " show the cursor column (maybe its better to not do so?)

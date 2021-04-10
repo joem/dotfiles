@@ -83,7 +83,8 @@
   set wrap                      " Line wrapping off
 
   "ok in general
-  syntax on
+  " syntax on
+  syntax enable
   set more                      " use more prompt
   set autoread                  " watch for file changes
   set hidden                    " hide buffers when not displayed
@@ -152,12 +153,17 @@
 
 " Vim UI ---------------{{{
 
-  "colorscheme candycode   " .gvimrc uses a different colorscheme
-  ""colorscheme tomorrow-night  " test running this, think i like it!
-  "colorscheme base16-tomorrow-night
-  colorscheme default " looks ok in the default terminal
-  ""Improve the todo coloring for 'tomorrow-night':
-  "hi Todo gui=NONE guifg=Black guibg=DeepSkyBlue1
+  " colorscheme default " looks ok in the default terminal
+  " colorscheme candycode   " .gvimrc uses a different colorscheme
+  " colorscheme tomorrow-night  " test running this, think i like it!
+  " colorscheme base16-tomorrow-night
+  " "Improve the todo coloring for 'tomorrow-night':
+  " hi Todo gui=NONE guifg=Black guibg=DeepSkyBlue1
+  if !has("gui_running")
+    let g:solarized_termcolors=256
+  endif
+  set background=dark
+  colorscheme solarized
 
   " Disable beeping and flashing for all errors
   set noerrorbells visualbell t_vb=
