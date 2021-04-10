@@ -160,6 +160,8 @@
   " "Improve the todo coloring for 'tomorrow-night':
   " hi Todo gui=NONE guifg=Black guibg=DeepSkyBlue1
   if !has("gui_running")
+    " This makes Solarized look better in Terminal since I'm not (yet?) using
+    " the Solarized Terminal colors.
     let g:solarized_termcolors=256
   endif
   set background=dark
