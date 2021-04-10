@@ -17,6 +17,9 @@ end result is you want the structure to be like:
 - [vim-airline](https://github.com/vim-airline/vim-airline)
   - "lean & mean status/tabline for vim that's light as air"
   - This gives me a nice looking status line.
+- [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+  - "precision colorscheme for the vim text editor"
+  - Nice looking colorscheme
 
 
 Note that the "joem" part can actually be anything, and you can have multiple
