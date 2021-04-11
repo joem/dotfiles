@@ -44,6 +44,13 @@ home dir to skip checking the last login:
 
     touch ~/.hushlogin
 
+The colorschemes I use in Vim also have Terminal colorschemes (among others).
+While there's not actually dotfiles, I'll put links here so you can install
+them if you want:
+
+- [solarized](https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized)
+- [srcery](https://github.com/srcery-colors/srcery-terminal/tree/master/terminal_app)
+
 
 VIM
 ---
