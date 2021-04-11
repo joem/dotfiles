@@ -84,7 +84,16 @@ autoload -Uz compinit && compinit
 # Prompts:
 
 # Left prompt
-PROMPT='%B%F{240}%2~%f%b %# '
+# %B        = start bold
+# %F{240}   = start foreground text color grey 240
+# %2~       = show rightmost two directorys in path or ~ if it's ~
+# %f        = reset foreground color to default textcolor
+# %b        = end bold
+# %#        = prompt as # when with root priviledges, otherwise it's %
+# PROMPT='%B%F{240}%2~%f%b %# '
+# Same as above except:
+# %(3~|.../%2~|%~)  = if path is 3 or more directories, show ... and rightmost 2 directories, or show ~
+PROMPT='%B%F{240}%(3~|.../%2~|%~)%f%b %# '
 
 # Right prompt
 # A good simple git integration example: https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
