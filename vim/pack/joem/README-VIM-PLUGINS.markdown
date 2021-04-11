@@ -19,7 +19,10 @@ end result is you want the structure to be like:
   - This gives me a nice looking status line.
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
   - "precision colorscheme for the vim text editor"
-  - Nice looking colorscheme
+  - Nice looking colorscheme.
+- [srcery-vim](https://github.com/srcery-colors/srcery-vim)
+  - "Dark colorscheme for gvim and vim"
+  - Nice looking colorscheme. I can't decide between this or Solarized, so I keep both.
 - [vim-vimhints](git@github.com:joem/vim-vimhints.git)
   - "my hints for using vim"
   - My own personal hints/notes about using Vim, formatted as a vim help file

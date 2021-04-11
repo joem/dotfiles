@@ -153,18 +153,14 @@
 
 " Vim UI ---------------{{{
 
-  " colorscheme default " looks ok in the default terminal
-  " colorscheme candycode   " .gvimrc uses a different colorscheme
-  " colorscheme tomorrow-night  " test running this, think i like it!
-  " colorscheme base16-tomorrow-night
-  " "Improve the todo coloring for 'tomorrow-night':
-  " hi Todo gui=NONE guifg=Black guibg=DeepSkyBlue1
-  if !has("gui_running")
-    " This makes Solarized look better in Terminal since I'm not (yet?) using
-    " the Solarized Terminal colors.
-    let g:solarized_termcolors=256
-  endif
   set background=dark
+  " colorscheme default " looks ok in the default Terminal
+  " colorscheme srcery " pretty good! (a bit higher contrast than solarized)
+  " if !has("gui_running")
+  "   " This makes Solarized look better in Terminal when not using their
+  "   " Terminal profile:
+  "   let g:solarized_termcolors=256
+  " endif
   " Disable the GUI Solarized menu, but might as well put it here:
   let g:solarized_menu=0
   colorscheme solarized
