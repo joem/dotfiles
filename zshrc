@@ -83,17 +83,30 @@ autoload -Uz compinit && compinit
 ##############################################################################
 # Prompts:
 
+# Notes:
+#   %F{COLOR}   = start foreground color
+#   %f          = end foreground color
+#   %K{COLOR}   = start background color
+#   %k          = end background color
+#   %B          = start bold
+#   %b          = end bold
+#   %#          = prompt as # when with root priviledges, otherwise it's %
+#   %2~         = show rightmost two directorys in path or ~ if it's ~
+#   %(3~|.../%2~|%~)  = show rightmost two dirs in path or ~ if it's ~, and if there's more than 2 show a ... also
+
 # Left prompt
-# %B        = start bold
-# %F{240}   = start foreground text color grey 240
-# %2~       = show rightmost two directorys in path or ~ if it's ~
-# %f        = reset foreground color to default textcolor
-# %b        = end bold
-# %#        = prompt as # when with root priviledges, otherwise it's %
+# Explanation of current prompt:
+#   %F{14}            = start foreground text color 14
+#   %(3~|.../%2~|%~)  = show rightmost two directorys and so on (see description above)
+#   %f                = reset foreground color to default textcolor
+#   %F{7}             = start foreground text color 14
+#   %#                = prompt as # when with root priviledges, otherwise it's %
+#   %f                = reset foreground color to default textcolor
 # PROMPT='%B%F{240}%2~%f%b %# '
 # Same as above except:
 # %(3~|.../%2~|%~)  = if path is 3 or more directories, show ... and rightmost 2 directories, or show ~
-PROMPT='%B%F{240}%(3~|.../%2~|%~)%f%b %# '
+# PROMPT='%B%F{240}%(3~|.../%2~|%~)%f%b %# '
+PROMPT='%F{14}%(3~|.../%2~|%~)%f %F{7}%#%f '
 
 # Right prompt
 # A good simple git integration example: https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
@@ -122,7 +135,7 @@ zstyle ':vcs_info:*' stagedstr '%F{green}+%f' # This is used for %c
 # %u = The string from the unstagedstr style if there are unstaged changes in the repository.
 # %m = A "misc" replacement. It is at the discretion of the backend to decide what this replacement expands to. The hg and git backends use this expando to display patch information.
 #zstyle ':vcs_info:git:*' formats '(%b %u%c%m)'
-zstyle ':vcs_info:git:*' formats '%F{240}(%s:%b%u%c%m%F{240})%f'
+zstyle ':vcs_info:git:*' formats '%F{14}(%s:%b%u%c%m%F{14})%f'
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 RPROMPT=\$vcs_info_msg_0_
