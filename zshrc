@@ -60,9 +60,9 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
-# enable zsh correction
-setopt CORRECT
-setopt CORRECT_ALL
+# disable zsh correction
+setopt NO_CORRECT
+setopt NO_CORRECT_ALL
 
 ##############################################################################
 # Completions:
