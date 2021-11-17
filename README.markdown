@@ -16,6 +16,7 @@ You'll need to do this all manually yourself.
 Create symlinks:
 
     ln -s ~/.dotfiles/zshrc         ~/.zshrc
+    ln -s ~/.dotfiles/zprofile      ~/.zprofile
     ln -s ~/.dotfiles/vimrc         ~/.vimrc
     ln -s ~/.dotfiles/gvimrc        ~/.gvimrc
     ln -s ~/.dotfiles/vim           ~/.vim
