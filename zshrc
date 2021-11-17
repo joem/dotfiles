@@ -29,6 +29,8 @@ export EDITOR='vim'
 # Load rbenv (Note: This updates the path, and not sure what else)
 eval "$(rbenv init -)"
 
+# Load pyenv (Note: This updates the path, and not sure what else)
+eval "$(pyenv init -)"
 
 ##############################################################################
 # zsh settings:
