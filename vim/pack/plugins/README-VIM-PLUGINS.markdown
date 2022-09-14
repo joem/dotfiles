@@ -3,8 +3,8 @@ Clone the following plugins into the `start` subdirectory to have Vim
 automatically load them. (After cloning them, run `:helptags ALL` in Vim.) The
 end result is you want the structure to be like:
 
-    ~/.vim/pack/joem/start/plugin1/...
-    ~/.vim/pack/joem/start/plugin2/...
+    ~/.vim/pack/plugins/start/plugin1/...
+    ~/.vim/pack/plugins/start/plugin2/...
     (and so on)
 
 
@@ -32,8 +32,9 @@ end result is you want the structure to be like:
     be confused with my vimhints)
 
 
-Note that the "joem" part can actually be anything, and you can have multiple
-directories too. With that in mind, if you have a lot you may want to break
+Note that the `plugins` part in `~/.vim/pack/plugins/start/` can actually be
+anything, and you can have multiple directories too. With that in mind, if you
+have a lot you may want to break
 them up like this:
 
     ~/.vim/pack/plugins/start/plugin1/...
