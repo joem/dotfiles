@@ -43,7 +43,7 @@
   "           |    |    + files marks saved
   "           |    + lines saved each register (old name for <, vi6.2)
   "           + save/restore buffer list
- 
+
   " Set the number of command-lines remembered (default: 50)
   set history=200
 
