@@ -6,11 +6,11 @@ First clone this repo:
     git clone git://github.com/joem/dotfiles.git ~/.dotfiles
 
 Where possible, Vim plugins are installed using Vim's packages feature. In my
-case, I'm installing them all into `~/.vim/pack/joem/start`. Check
-[vim/pack/joem/README-VIM-PLUGINS.markdown](vim/pack/joem/README-VIM-PLUGINS.markdown)
+case, I'm installing them all into `~/.vim/pack/plugins/start`. Check
+[vim/pack/plugins/README-VIM-PLUGINS.markdown](vim/pack/plugins/README-VIM-PLUGINS.markdown)
 for the list of plugins and more details about how to install them. In general,
 you can simply `git clone` any plugin you want into its own subdirectory in
-`~/.vim/pack/joem/start`. (Be sure to run `:helptags ALL` in Vim afterwards.)
+`~/.vim/pack/plugins/start`. (Be sure to run `:helptags ALL` in Vim afterwards.)
 You'll need to do this all manually yourself.
 
 Create symlinks:
@@ -63,9 +63,9 @@ directory. As per above, these are all symlinked into my home directory.
 ### Adding a plugin from a git repo
 
 Be sure to `git clone` the plugin into its own folder in
-`~/.vim/pack/joem/start` and be sure to update
-`~/.vim/pack/joem/README-VIM-PLUGINS.markdown` so you can keep track of what
-came from where and what it is.  All subdirectories in `~/.vim/pack/joem/start`
+`~/.vim/pack/plugins/start` and be sure to update
+`~/.vim/pack/plugins/README-VIM-PLUGINS.markdown` so you can keep track of what
+came from where and what it is.  All subdirectories in `~/.vim/pack/plugins/start`
 are untracked, so cloning things there is not a problem.
 
 (Be sure to run `:helptags ALL` in Vim afterwards.)
@@ -74,8 +74,8 @@ are untracked, so cloning things there is not a problem.
 
 If you want to install a non-git plugin and you don't want to check the plugin
 itself into this dotfiles repo, then just put the plugin into its own directory
-in `~/.vim/pack/joem/start` and write a note in
-`~/.vim/pack/joem/README-VIM-PLUGINS.markdown`.
+in `~/.vim/pack/plugins/start` and write a note in
+`~/.vim/pack/plugins/README-VIM-PLUGINS.markdown`.
 
 (Be sure to run `:helptags ALL` in Vim afterwards.)
 
@@ -98,7 +98,7 @@ Simply replace the file(s) or directory with the newer version.
 
 Easy... Just delete the plugin's directory from the appropriate bundly folder,
 and you're done. You might want to note it in
-`~/.vim/pack/joem/README-VIM-PLUGINS.markdown` too.
+`~/.vim/pack/plugins/README-VIM-PLUGINS.markdown` too.
 
 
 HOMEBREW
