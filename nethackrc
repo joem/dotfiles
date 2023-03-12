@@ -1,42 +1,101 @@
 #
-# see http://nethack.wikia.com/wiki/Options for all possible options
+# See http://nethack.wikia.com/wiki/Options for all possible options
+# (or maybe https://nethackwiki.com/wiki/Options is better?)
 #
-#----------GAME ENVIRONMENT----------
-#OPTIONS=color,hilite_pet,lit_corridor,DECgraphics
-OPTIONS=color,hilite_pet,lit_corridor,IBMgraphics
-#OPTIONS=color,hilite_pet,lit_corridor
-#OPTIONS=showexp,showscore,time
-OPTIONS=msg_window:r,disclose:+i+a+v+g+c
+# Note: Some settings here need nethack 3.6.0 or greater.
+
+#----------GAME ENVIRONMENT---------------------------------------------------
+
+OPTIONS=windowtype:curses
+
+#OPTIONS=symset:DECgraphics
+#OPTIONS=symset:IBMgraphics
+#OPTIONS=symset:IBMgraphics_1
+#OPTIONS=symset:IBMgraphics_2
+OPTIONS=symset:curses
+
+# Use color
+OPTIONS=color
+
+# Show inventory at all times (in a sidebar) -- good for wider screens than mine
+#OPTIONS=perm_invent
+
+# Visually distinguish pets from similar animals.
+OPTIONS=hilite_pet
+
+# Visually distinguish piles of objects from individual objects.
+OPTIONS=hilite_pile
+
+# Distinguish visually between lit and unlit corridors.
+OPTIONS=lit_corridor
+
+# Displays the exact number of experience points next to your experience level on the status line.
+#OPTIONS=showexp
+
+# Shows your approximate accumulated score on the bottom line.
+#OPTIONS=showscore
+
+# Displays elapsed game time, in turns, on the status line. Very useful for estimating prayer timeouts, spell lifespan, and more.
+#OPTIONS=time
+
+# When messages shown with ^P, use full window, newest message first
+OPTIONS=msg_window:r
+
+# When quitting, show all stats
+OPTIONS=disclose:+i+a+v+g+c
+
+# Stops your terminal's bell sounding.
 #OPTIONS=silent
-#------------------------------------
-# color         -NetHack should display color if it can for different monsters, objects, and dungeon features.
-# hilite_pet    -Visually distinguish pets from similar animals.
-# lit_corridor  -Distinguish visually between lit and unlit corridors.
-# DECgraphics   -Use DEC line-drawing characters. Won't work for all terminals
-# msg_window:r  -When messages shown with ^P, use full window, newest message first
-# disclose:+i+a+v+g+c -When quitting, show all stats 
-## silent        -Stops your terminal's bell sounding.
 
-#----------CUSTOM ENVIRONMENT----------
-#OPTIONS=catname:Sylvester,dogname:Ma-Mutt,horsename:Falafel
-OPTIONS:boulder:0,fruit:lime,pushweapon,sortpack
-#--------------------------------------
-# boulder       -Set custom image
-# fruit         -Set custom name
-# pushweapon    -If you wield something, the weapon you're already wielding is pushed into the alternate weapon slot. 
-# sortpack      -Groups similar kinds of objects in your inventory.
 
-#----------CONTROLS----------
-OPTIONS=autodig,!autopickup
-#----------------------------
+#----------CUSTOM ENVIRONMENT-------------------------------------------------
+# Set some defaults
+#OPTIONS=catname:Sylvester
+#OPTIONS=dogname:Ma-Mutt
+#OPTIONS=horsename:Falafel
+OPTIONS=boulder:0
+OPTIONS=fruit:lime
 
-#----------CHARACTER(disabled)----------
-#OPTIONS=role:Yeoman,race:Human,gender:male
-#---------------------------------------
+# If you wield something, the weapon you're already wielding is pushed into the alternate weapon slot.
+OPTIONS=pushweapon
 
-#----------MENU COLORS----------
+# Groups similar kinds of objects in your inventory.
+OPTIONS=sortpack
+
+
+#----------CONTROLS-----------------------------------------------------------
+
+# Automatically dig, if you're wielding a digging tool and moving into a place that can be dug.
+OPTIONS=autodig
+
+# DON'T automatically pick up things onto which you move.
+OPTIONS=!autopickup
+
+# Move by numbers
+# 1 means digit 5 acts as G movement prefix
+# 2 means digit 5 acts as g movement prefix
+OPTIONS=number_pad:1
+#OPTIONS=number_pad:2
+
+# Require 'yes' instead of just 'y' for these actions
+OPTIONS=paranoid_confirmation:quit attack pray wand-break
+
+#----------CHARACTER----------------------------------------------------------
+
+# For possible values, see https://nethackwiki.com/wiki/Role
+#OPTIONS=role:Ranger
+
+# Possible values: human, elf, dwarf, gnome, orc, random
+#OPTIONS=race:Human
+
+# Possible values: male, female, random
+#OPTIONS=gender:male
+
+
+#----------MENU COLORS--------------------------------------------------------
 OPTIONS=menucolors
-MENUCOLOR="[Cc]ursed"=orange&bold&underline
+#MENUCOLOR="[Cc]ursed"=orange&bold&underline
+MENUCOLOR="[Cc]ursed"=orange&underline
 MENUCOLOR="[Uu]ncursed"=yellow
 MENUCOLOR="[Bb]lessed"=lightgreen
 MENUCOLOR="-[0-9]"=orange
@@ -45,113 +104,79 @@ MENUCOLOR="-[0-9]"=orange
 #MENUCOLOR="* unholy *"=red
 #MENUCOLOR="* blessed *"=green
 #MENUCOLOR="* holy *"=green
-#-------------------------------
 
-#----------STATUS COLORS----------
-#(These are for the patched unnethack, and can be ignored for normal nethack)
-OPTIONS=statuscolors
+## SPELL FAILURE RATES ##
+MENUCOLOR=" 0% "=green
+MENUCOLOR="[1-9]% "=lightgreen
+MENUCOLOR="1[0-3]% "=lightgreen
+MENUCOLOR="1[4-9]% "=yellow
+MENUCOLOR="2[0-7]% "=yellow
+MENUCOLOR="2[8-9]% "=yellow
+MENUCOLOR="3[0-9]% "=yellow
+MENUCOLOR="4[0-1]% "=yellow
+MENUCOLOR="4[2-9]% "=orange
+MENUCOLOR="5[0-6]% "=orange
+MENUCOLOR="5[7-9]% "=orange
+MENUCOLOR="6[0-9]% "=orange
+#MENUCOLOR="70%"=orange
+MENUCOLOR="7[0-9]% "=red
+MENUCOLOR="8[0-4]% "=red
+MENUCOLOR="8[5-9]% "=red&underline
+MENUCOLOR="9[0-9]% "=red&underline
+MENUCOLOR="100% "=red&inverse
+
+## FORGOTTEN SPELL ##
+MENUCOLOR="\(gone\)"=magenta
+
+
+##----------STATUS COLORS-----------------------------------------------------
+
+# Ensure changes will be shown for a few turns after they happen.
+OPTIONS=statushilites:10
+
+# Show when XL changes.
+OPTIONS=hilite_status:experience-level/changed/white/cyan
+
 # HP
-STATUSCOLOR=hp%100=green,hp%66=yellow,hp%50=orange
-STATUSCOLOR=hp%33=red&bold,hp%15:red&inverse,hp%0:red&inverse&blink
+# Show a hit point bar graph behind your name and title.
+#OPTIONS=hitpointbar
+OPTIONS=hilite_status:hitpoints/100%/grey&normal
+OPTIONS=hilite_status:hitpoints/<100%/green&normal
+OPTIONS=hilite_status:hitpoints/<66%/yellow&normal
+OPTIONS=hilite_status:hitpoints/<50%/orange&normal
+OPTIONS=hilite_status:hitpoints/<33%/red&bold
+OPTIONS=hilite_status:hitpoints/<15%/red&inverse
+
 # Pw
-STATUSCOLOR=pw%100=green,pw%66=yellow,pw%50:orange,pw%33=red&bold
+OPTIONS=hilite_status:power/100%/grey&normal
+OPTIONS=hilite_status:power/<100%/green&normal
+OPTIONS=hilite_status:power/<66%/yellow&normal
+OPTIONS=hilite_status:power/<50%/orange&normal
+OPTIONS=hilite_status:power/<33%/red&bold
+
 # Carry
-STATUSCOLOR=burdened:yellow,stressed:orange,strained:red&bold
-STATUSCOLOR=overtaxed:red&inverse,overloaded:red&inverse&blink
+OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
+
 # Hunger
-STATUSCOLOR=satiated:yellow,hungry:orange,weak:red&bold
-STATUSCOLOR=fainting:red&inverse,fainted:red&inverse&blink
-# Mental
-STATUSCOLOR=hallu:yellow,conf:orange,stun:red&bold
-# Health
-STATUSCOLOR=ill:red&inverse,foodpois:red&inverse,slime:red&inverse
-# Other
-STATUSCOLOR=held:red&inverse,blind:red&inverse
-#-------------------------------
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
 
-# DUNGEON = 032 179 196 218 191 192 217 197 193 194 180 195 250 254 254 043 043 240 241 250 176 177 060 062 060 062 095 124 092 035 244 247 250 247 250 250 035 035 032 035 247
+# Conditions
+OPTIONS=hilite_status:condition/hallu/yellow
+OPTIONS=hilite_status:condition/conf/orange
+OPTIONS=hilite_status:condition/stun/red&bold
+# major_troubles: alias for stone, slime, strngl, foodpois, and termill
+OPTIONS=hilite_status:condition/major_troubles/red&inverse
+OPTIONS=hilite_status:condition/blind/red
+OPTIONS=hilite_status:condition/deaf/orange
 
-#DUNGEON = |--------||.-|++##.##<><>_|\\#{}.}..## #}
+# Str, Con, Dex, Int, Wis, Cha
+OPTIONS=hilite_status:characteristics/up/green/down/red
 
-#DUNGEON = │─┌┐└┘┼┴┬┤├·■■++≡±·░▒<><>_|\#⌠≋·≋··## #≋
+# gold
+OPTIONS=hilite_status:gold/up/yellow/down/brown
+# # Always show gold as the proper color.
+# OPTIONS=hilite_status:gold/always/yellow
 
 
-# align_message
-# Where to align or place the message window. Compound option, with possible values of top, bottom, left, or right. Cannot be set in-game.
-# 
-# align_status
-# Where to align or place the status window. Compound option, with possible values of top, bottom, left, or right. Cannot be set in-game.
-# 
-# altmeta
-# Use the alt keys as meta keys. Boolean option, default is on. Only implemented for Amiga. Cannot be set in-game.
-# 
-# ascii_map
-# NetHack should display an ascii character map if it can. Boolean option. Can be set in-game.
-# 
-# autodig
-# Automatically dig, if you're wielding a digging tool and moving into a place that can be dug. A boolean option, defaults to FALSE. Can be set in-game.
-# 
-# character
-# Compound option. Sets your character type. Synonym for role. Can also be random. Can also be used as its own option-line:
-# CHARACTER=val
-# 
-# confirm
-# Have user confirm attacks on peaceful creatures. A boolean option, defaults to TRUE. Can be set in-game.
-# 
-# dungeon
-# Set the character symbols for displaying the dungeon. Compound option, takes a string of up to 41 characters, with default values of  |--------||.-|++##.##<><>_|\\#{}.}..## #}
-# Can also be defined by using ASCII values instead of characters; see Custom map symbols#DUNGEON.
-# The order of the symbols is: solid rock, vertical wall, horizontal wall, upper left corner, upper right corner, lower left corner, lower right corner, cross wall, upward T wall, downward T wall, leftward T wall, rightward T wall, no door, vertical open door, horizontal open door, vertical closed door, horizontal closed door, iron bars, tree, floor of a room, dark corridor, lit corridor, stairs up, stairs down, ladder up, ladder down, altar, grave, throne, kitchen sink, fountain, pool or moat, ice, lava, vertical lowered drawbridge, horizontal lowered drawbridge, vertical raised drawbridge, horizontal raised drawbridge, air, cloud, under water.
-# 
-# extmenu
-# Does extended commands interface pop up a menu? A boolean option, defaults to FALSE. Only implemented for the TTY windowport.
-# 
-# MacGraphics
-# Use Mac-specific character set to display map. A boolean, Mac-only, defaults to on. See also IBMgraphics and DECgraphics.
-# 
-# menu_headings
-# Controls how the headings in a menu are highlighted. Compound option, with possible values of bold, inverse, or underline. Not all ports can actually display all three types.
-# 
-# menustyle
-# Controls the interface used when you need to choose various objects (in response to the Drop command, for instance). Compound option, with following possible values:
-# traditional - prompt for object class characters, followed by an object-by-object prompt for all matching items
-# combination - prompt for object classes of interest, then display a menu of matching objects
-# partial - skip the object class filtering and immediately display a menu of all objects
-# full - display a menu of object classes, and then a menu of matching objects
-# 
-# name
-# The name of your character. Compound option, defaults to your user name. If set to player, then NetHack will ask for the user name, even on systems where it normally wouldn't. If suffixed with dash and character role letter, then also defines the character role, or if suffixed with -@, then selects a random role. Cannot be set in-game.
-# Can also be used as its own option-line:
-# NAME=player
-# 
-# number_pad
-# Use the number keys to move instead of [yuhjklbn].
-# 0=use [yuhjklbn] (default)
-# 1=use [79428613]
-# 2=use [79428613] and invokes the old DOS behavior where `5' means `g', meta-`5' means `G', and meta-`0' means `I'
-# With number_pad:1 or number_pad:2, counts need to be prefixed with 'n' (n50s to search 50 times). Also, some extended commands are available in a short form (l=#loot, u=#untrap, etc).
-# For backwards compatibility, number_pad without a value is synonymous to number_pad:1.
-# 
-# pickup_types
-# Specify the object types to be picked up when autopickup is on. Default is all to pick up all types. For example "pickup_types:?!/" would pick up all scrolls, potions and wands.
-# 
-# scores
-# Control what part of hiscore list to show at the end of game. Compound option. Can be set in-game. Accept the following options, separated by spaces:
-# o - show my own score. Can be prefixed with ! to not show own score.
-# Xa - show X scores around own score
-# Xt - show X scores from the top
-# For example
-# OPTIONS=scores:10t 2a o
-# 
-# showscore
-# Shows your approximate accumulated score on the bottom line. A boolean option, defaults to false. Can be set in-game. Only available if NetHack was compiled with SCORE_ON_BOTL.
-# 
-# windowcolors
-# NetHack should display windows with the specified foreground/background colors if it can. Compound option. Cannot be set in-game. Example:
-# OPTIONS=windowcolors:menu white/black message green/yellow status white/blue text white/black
-# 
-# windowtype
-# Select which windowing system to use, such as tty or X11 (default depends on version). Cannot be set in-game. Example:
-# OPTIONS=windowtype:tty
-# 
+#-----------------------------------------------------------------------------
 
