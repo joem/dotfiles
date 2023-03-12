@@ -5,11 +5,15 @@
 ##############################################################################
 # Path:
 
+# Add the fpga stuff to path:
+export PATH="/Users/joe/Programming/fpga/oss-cad-suite/bin:$PATH"
+
+# add my personal bin folder and macvim last, so they override others if dupes:
 export PATH="$HOME/bin:/Applications/MacVim.app/Contents/bin:$PATH"
 
 
 ##############################################################################
-# Misc
+# Misc / Settings for individual programs
 
 #bindkey '^[[A' up-line-or-search # Make up arrow do a up arrow or search history
 #bindkey '^[[B' down-line-or-search # Make down arrow do a down arrow or search history
@@ -31,6 +35,16 @@ eval "$(rbenv init -)"
 
 # Load pyenv (Note: This updates the path, and not sure what else)
 eval "$(pyenv init -)"
+
+# For programming a Raspberry Pi Pico
+export PICO_SDK_PATH="$HOME/Programming/pico/pico-sdk"
+
+# This sets where nvm can be found
+export NVM_DIR="$HOME/.nvm"
+# This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 ##############################################################################
 # zsh settings:
@@ -76,6 +90,12 @@ zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' menu select=0 interactive # Highlights selected completion when menu in use
 zstyle ':completion:*' special-dirs .. # Enable expanding/completing .. to ../
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # Use LS_COLORS to colorize the completion menus
+
+# Add homebrew completion path
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
 
 # init the zsh completions system
 autoload -Uz compinit && compinit
@@ -145,16 +165,19 @@ RPROMPT=\$vcs_info_msg_0_
 # Another way to get changes info is with git-prompt.sh
 # ( from https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh )
 
-
 ##############################################################################
 # Aliases & Functions:
 
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
+alias lll='ll --color|less -R'
+alias llla='lla --color|less -R'
 # fdc is oposite of cdf. it opens a finder window of the current terminal dir
 alias fdc='open .'
 
+# changes directory to frontmost Finder window
+alias cdf='pwdf; cd "$(pwdf)"'
 
 # prints the path of the front Finder window. Desktop if no window open
 function pwdf () {
@@ -170,6 +193,4 @@ function pwdf () {
 EOS
 }
 
-# changes directory to frontmost Finder window
-alias cdf='pwdf; cd "$(pwdf)"'
 
