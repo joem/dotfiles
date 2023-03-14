@@ -23,6 +23,12 @@ end result is you want the structure to be like:
 - [srcery-vim](https://github.com/srcery-colors/srcery-vim)
   - "Dark colorscheme for gvim and vim"
   - Nice looking colorscheme. I can't decide between this or Solarized, so I keep both.
+- [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript)
+  - "Vastly improved Javascript indentation and syntax support in Vim"
+  - This works in combo with vim-jsx-pretty to make react highlighting better.
+- [vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty)
+  - "JSX and TSX syntax pretty highlighting for vim"
+  - This works in combo with vim-javascript to make react highlighting better.
 - [vim-vimhints](git@github.com:joem/vim-vimhints.git)
   - "my hints for using vim"
   - My own personal hints/notes about using Vim, formatted as a vim help file
