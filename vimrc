@@ -154,13 +154,19 @@
 " Vim UI ---------------{{{
 
   set background=dark
-  " colorscheme default " looks ok in the default Terminal
-  " colorscheme srcery " pretty good! (a bit higher contrast than solarized)
-  " if !has("gui_running")
-  "   " This makes Solarized look better in Terminal when not using their
-  "   " Terminal profile:
-  "   let g:solarized_termcolors=256
-  " endif
+  "colorscheme default " looks ok in the default Terminal
+  "colorscheme srcery " pretty good! (a bit higher contrast than solarized)
+
+  " If for some reason you can't get solarized working right in the terminal,
+  " you can use the following if clause to make it look better but still not
+  " right. But it probably just means you need to reinstall the terminal theme
+  " from here: https://github.com/tomislav/osx-terminal.app-colors-solarized
+  "if !has("gui_running")
+  "  " This makes Solarized look better in Terminal when not using their
+  "  " Terminal profile:
+  "  let g:solarized_termcolors=256
+  "endif
+
   " Disable the GUI Solarized menu, but might as well put it here:
   let g:solarized_menu=0
   colorscheme solarized
