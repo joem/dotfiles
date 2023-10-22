@@ -23,6 +23,7 @@ Create symlinks:
     ln -s ~/.dotfiles/gitconfig     ~/.gitconfig
     ln -s ~/.dotfiles/gitignore     ~/.gitignore
     ln -s ~/.dotfiles/nethackrc     ~/.nethackrc
+    ln -s ~/.dotfiles/ackrc         ~/.ackrc
 
 
 I set the settings for Vim's backup and swap files such a way so that by
