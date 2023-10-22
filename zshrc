@@ -46,6 +46,9 @@ export NVM_DIR="$HOME/.nvm"
 # This loads nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# Load asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 ##############################################################################
 # zsh settings:
 
