@@ -4,6 +4,12 @@
 "       To open all folds, use:  ,fo
 "       To close all folds, use: ,fc
 
+" TODO: Make this all a lot simpler somehow! Or better explain it so I know
+" what every single thing does and _why_ I set it that way.
+
+" TODO: Get rid of settings that are just setting the same thing as the
+" defaults.
+
 " Environment ---------------{{{
 
   " Basics
@@ -48,7 +54,7 @@
   set history=200
 
   " ---------------------------------------------------------------------------
-  " setup for the visual environment
+  " terminal setup stuff
   if $TERM =~ '^xterm'
     "set t_Co=16   " changed from 256
     set t_Co=256
@@ -61,6 +67,57 @@
   else
     set t_Co=16
   endif
+
+
+  " All of the following &t_ stuff comes from: https://sw.kovidgoyal.net/kitty/faq/#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+  " " Mouse support
+  " set mouse=a
+  " set ttymouse=sgr
+  " set balloonevalterm
+  " Styled and colored underline support
+  let &t_AU = "\e[58:5:%dm"
+  let &t_8u = "\e[58:2:%lu:%lu:%lum"
+  let &t_Us = "\e[4:2m"
+  let &t_Cs = "\e[4:3m"
+  let &t_ds = "\e[4:4m"
+  let &t_Ds = "\e[4:5m"
+  let &t_Ce = "\e[4:0m"
+  " Strikethrough
+  let &t_Ts = "\e[9m"
+  let &t_Te = "\e[29m"
+  " Truecolor support
+  let &t_8f = "\e[38:2:%lu:%lu:%lum"
+  let &t_8b = "\e[48:2:%lu:%lu:%lum"
+  let &t_RF = "\e]10;?\e\\"
+  let &t_RB = "\e]11;?\e\\"
+  " Bracketed paste
+  let &t_BE = "\e[?2004h"
+  let &t_BD = "\e[?2004l"
+  let &t_PS = "\e[200~"
+  let &t_PE = "\e[201~"
+  " Cursor control
+  let &t_RC = "\e[?12$p"
+  let &t_SH = "\e[%d q"
+  let &t_RS = "\eP$q q\e\\"
+  let &t_SI = "\e[5 q"
+  let &t_SR = "\e[3 q"
+  let &t_EI = "\e[1 q"
+  let &t_VS = "\e[?12l"
+  " Focus tracking
+  let &t_fe = "\e[?1004h"
+  let &t_fd = "\e[?1004l"
+  execute "set <FocusGained>=\<Esc>[I"
+  execute "set <FocusLost>=\<Esc>[O"
+  " Window title
+  let &t_ST = "\e[22;2t"
+  let &t_RT = "\e[23;2t"
+  " vim hardcodes background color erase even if the terminfo file does
+  " not contain bce. This causes incorrect background rendering when
+  " using a color theme with a background color in terminals such as
+  " kitty that do not support background color erase.
+  let &t_ut=''
+  " The above group of &t_ settings must be placed before setting the colorscheme.
+  " It is also important that the value of the vim term variable is not changed after these settings.
 
 " }}}
 
@@ -96,7 +153,8 @@
   set sidescrolloff=5           " keep at least 5 lines left/right
   set backspace=indent,eol,start  " allow backspacing over everything in insert mode
   set showfulltag               " show full completion tags
-  set noerrorbells              " no error bells please
+  " Disable beeping and flashing for all errors
+  set noerrorbells visualbell t_vb=
   set undolevels=1000           " 1000 undos
   set updatecount=100           " switch every 100 chars
   set completeopt=longest,menu,preview " completion options
@@ -124,7 +182,7 @@
   "endif
 
   "  mouse stuffs
-  set mouse=a                   " mouse support in all modes
+  " set mouse=a                   " mouse support in all modes
   set mousehide                 " hide the mouse when typing
 
   " ---------------------------------------------------------------------------
@@ -170,9 +228,6 @@
   " Disable the GUI Solarized menu, but might as well put it here:
   let g:solarized_menu=0
   colorscheme solarized
-
-  " Disable beeping and flashing for all errors
-  set noerrorbells visualbell t_vb=
 
   "improve autocomplete menu color
   highlight Pmenu ctermbg=238 gui=bold
