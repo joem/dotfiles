@@ -154,6 +154,7 @@ alias lll='ll --color|less -R'
 alias llla='lla --color|less -R'
 # fdc is oposite of cdf. it opens a finder window of the current terminal dir
 alias fdc='open .'
+alias ql='qlmanage -p'
 
 # changes directory to frontmost Finder window
 alias cdf='pwdf; cd "$(pwdf)"'
