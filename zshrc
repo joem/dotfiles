@@ -2,15 +2,7 @@
 
 # Much of this config came from https://scriptingosx.com/2019/07/moving-to-zsh-part-4-aliases-and-functions/
 
-##############################################################################
-# Path:
-
-# Add the fpga stuff to path:
-export PATH="/Users/joe/Programming/fpga/oss-cad-suite/bin:$PATH"
-
-# add my personal bin folder and macvim last, so they override others if dupes:
-export PATH="$HOME/bin:/Applications/MacVim.app/Contents/bin:$PATH"
-
+# NOTE: Path is now set in zprofile instead o zshrc.
 
 ##############################################################################
 # Misc / Settings for individual programs
@@ -29,22 +21,6 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='0;32'
 
 # Set vim as default editor for programs that care
 export EDITOR='vim'
-
-# Load rbenv (Note: This updates the path, and not sure what else)
-eval "$(rbenv init -)"
-
-# Load pyenv (Note: This updates the path, and not sure what else)
-eval "$(pyenv init -)"
-
-# For programming a Raspberry Pi Pico
-export PICO_SDK_PATH="$HOME/Programming/pico/pico-sdk"
-
-# This sets where nvm can be found
-export NVM_DIR="$HOME/.nvm"
-# This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Load asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
@@ -181,6 +157,9 @@ alias fdc='open .'
 
 # changes directory to frontmost Finder window
 alias cdf='pwdf; cd "$(pwdf)"'
+
+# alias to love
+alias love="/Applications/love.app/Contents/MacOS/love"
 
 # prints the path of the front Finder window. Desktop if no window open
 function pwdf () {
