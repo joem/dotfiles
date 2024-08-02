@@ -49,6 +49,8 @@ setopt INC_APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST 
 # do not store duplications
 setopt HIST_IGNORE_DUPS
+# do not store commands that start with a space
+setopt HIST_IGNORE_SPACE
 #ignore duplicates when searching
 setopt HIST_FIND_NO_DUPS
 # removes blank lines from history
