@@ -55,7 +55,8 @@ _fzf_comprun() {
 
 
 # Load asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 ##############################################################################
 # zsh settings:
@@ -183,14 +184,22 @@ RPROMPT=\$vcs_info_msg_0_
 ##############################################################################
 # Aliases & Functions:
 
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
+# alias ll='ls -l'
+alias ll='eza -l'
+# alias la='ls -a'
+alias la='eza -a'
+# alias lla='ls -la'
+alias lla='eza -la'
 alias lll='ll --color|less -R'
 alias llla='lla --color|less -R'
 # fdc is oposite of cdf. it opens a finder window of the current terminal dir
 alias fdc='open .'
 alias ql='qlmanage -p'
+
+# some handy sips image processing aliases:
+alias resizeto='sips -Z'
+alias resizeto2000='sips -Z 2000'
+alias getimagesize='sips -g pixelHeight -g pixelWidth'
 
 # changes directory to frontmost Finder window
 alias cdf='pwdf; cd "$(pwdf)"'
