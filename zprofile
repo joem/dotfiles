@@ -4,9 +4,6 @@ eval "$(pyenv init --path)"
 ##############################################################################
 # Path:
 
-# Add the fpga stuff to path:
-export PATH="/Users/joe/Programming/fpga/oss-cad-suite/bin:$PATH"
-
 # add my personal bin folder and macvim last, so they override others if dupes:
 export PATH="$HOME/bin:/Applications/MacVim.app/Contents/bin:$PATH"
 
@@ -17,9 +14,9 @@ eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 
 # For programming a Raspberry Pi Pico
-export PICO_SDK_PATH="$HOME/Programming/pico/pico-sdk"
+export PICO_SDK_PATH="$HOME/Programming/pico/pico-sdk/2.1.0"
 
-# This sets where nvm can be found
+# This sets where nvm (Node Version Manager) can be found
 export NVM_DIR="$HOME/.nvm"
 # This loads nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
